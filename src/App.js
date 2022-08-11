@@ -11,7 +11,14 @@ import YourBoards from './components/YourBoards/YourBoards';
 import SubNav from './components/SubNav/SubNav';
 
 class App extends Component {
-  state = { currentTab:1 };
+  state = { 
+    user: null,
+    currentTab: 1, 
+  };
+
+  setUserInState = (incomingUserData) => {
+    this.setUserInState({user: incomingUserData });
+  }
 
   updateCurrentTabTo = (tab) => {
     this.setState((state) => ({ currentTab: tab }));

@@ -1,6 +1,6 @@
 import React from 'react'
-import SavedTicTok from '../SavedTicTok/SavedTicTok'
-import ViewMore from '../ViewMore/ViewMore'
+import SavedTicTok from './SavedTicTok/SavedTicTok'
+import ViewMore from '../../ViewMore/ViewMore'
 
 function TicTokImages() {
   return (
