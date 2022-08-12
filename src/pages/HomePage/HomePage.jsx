@@ -8,9 +8,13 @@ import PageTitle from '../../components/PageTitle/PageTitle';
 import TicTocImages from '../../components/TicTokImages/TicTokImages';
 import YourBoards from '../../components/YourBoards/YourBoards';
 import SubNav from '../../components/SubNav/SubNav';
+import { Link } from 'react-router-dom';
 
 class HomePage extends React.Component {
-  state = { currentTab:1 };
+  state = { 
+    currentTab: 1, 
+    show: 1
+  };
 
   updateCurrentTabTo = (tab) => {
     this.setState((state) => ({ currentTab: tab }));
@@ -30,6 +34,7 @@ class HomePage extends React.Component {
         App
         <nav className="component">
             <Nav />
+            <Link to='' className='button btn-sm'>Home</Link>
         </nav>
         <SubNav />
         <PageTitle />
