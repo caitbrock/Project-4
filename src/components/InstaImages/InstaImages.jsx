@@ -1,6 +1,6 @@
 import React from 'react'
-import SavedInsta from './SavedInsta/SavedInsta'
-import ViewMore from '../../ViewMore/ViewMore'
+import SavedInsta from '../SavedInsta/SavedInsta'
+import ViewMore from '../ViewMore/ViewMore'
 
 function InstaImages() {
   return (

@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-function UserLogOut() {
+class UserLogOut extends React.Component {
+  render() {
   return (
-    <div className='logout'>UserLogOut</div>
-  )
+      <div className='UserLogOut'>
+        <div>Name: ??</div>
+        <div>Email: ??</div>
+        <button className="btn-sm">Logout</button>
+      </div>
+  );
+  }
 }
 
-export default UserLogOut
+export default UserLogOut;
