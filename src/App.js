@@ -15,7 +15,7 @@ class App extends Component {
   };
 
   setUserInState = (incomingUserData) => {
-    this.setUserInState({user: incomingUserData });
+    this.setState({user: incomingUserData });
   };
   
   componentDidMount() {
