@@ -18,6 +18,7 @@ export default class AuthPage extends React.Component {
             {this.state.showLogin ? 'SIGN UP' : 'LOG IN'}
           </h3>
         </div>
+
         {this.state.showLogin ? 
         <LoginForm setUserInState={this.props.setUserInState}/> : 
         <SignUpForm setUserInState={this.props.setUserInState} />}

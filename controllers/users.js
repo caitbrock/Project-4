@@ -2,6 +2,8 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
+const SALT_ROUNDS = 6;
+
 module.exports = {
     create,
     login,
@@ -23,7 +25,7 @@ async function create(req, res){
     try {
         const user = await User.findOne({ email: req.body.email });
         if (!(await bcrypt.compare(req.body.password, user.password))) throw new Error();
-        const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '10s' });
+        const token = jwt.sign({ user }, process.env.SECRET,{ expiresIn: '24h' });
         res.status(200).json(token)
         } catch {
           res.status(400).json('Bad Credentials');

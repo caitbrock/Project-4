@@ -1,9 +1,13 @@
-import React from 'react'
+import React, {Component} from 'react'
+import logo from '../../Logo-color.png'
 
-function Logo() {
+class Logo extends Component {
+  render () {
   return (
-    <div className='logo'>Logo</div>
+  <>
+      <img className="logo-nav" src={logo} height='50px'/>
+      </>
   )
-}
+}}
 
 export default Logo
