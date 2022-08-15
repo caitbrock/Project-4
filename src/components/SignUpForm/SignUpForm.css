@@ -1,0 +1,133 @@
+.signup {
+    position: relative;
+    background-size: 100% auto;
+    z-index: -2;
+    background-repeat: no-repeat;
+    background-position: 0%;
+}
+
+.logo-white {
+    margin-top: 350px;
+    margin-bottom: 50px;
+}
+
+.boxes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.box{
+    height: 300px;
+    width: 300px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.464);
+    z-index: -1;
+}
+
+.Number{
+    color: white;
+    font-size: 100px;
+
+}
+
+.State{
+    color: black;
+
+}
+
+.Instructions{
+    color: black;
+
+}
+
+.part1 {
+    height: 500px;
+}
+
+.part2 {
+    height: 500px;
+}
+
+.part3 {
+    height: 500px;
+
+}
+
+.letsgetstarted{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.letsgetstarted-text{
+    margin: 10px;
+}
+.step-instructions{
+    margin: 20px;
+    padding: 20px;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    background-size: 100% auto;
+    z-index: -2;
+    background-repeat: no-repeat;
+}
+
+input[type=text]{
+    border-radius: 20px;
+    border: .5px solid #b8b8b8;
+    color: #242424;
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+input[type=email]{
+    border-radius: 20px;
+    border: .5px solid #b8b8b8;
+    color: #242424;
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+input[type=password]{
+
+     border-radius: 20px;
+     border: .5px solid #b8b8b8;
+     color: #242424;
+     width: 250px;
+     height: 30px;
+     padding-left: 10px;
+     margin: 10px;
+}
+
+.traveltags{
+    display: flex;
+    flex-direction: column;
+}
+.Submit{
+    justify-content: center;
+    align-items: center;
+    background-color: #D4A373;
+    border-radius: 20px;
+    border: 0;
+    color: #242424;
+    width: 250px;
+    height: 50px;
+    padding-left: 10px;
+    margin: 10px;
+}
+
+span{
+    margin:5px;
+}
