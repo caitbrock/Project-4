@@ -16,13 +16,9 @@ class HomePage extends React.Component {
     show: 1
   };
 
-  updateCurrentTabTo = (tab) => {
-    this.setState((state) => ({ currentTab: tab }));
-  };
-
   render() {
     return (
-      <div className="component">
+      <main className="component">
         <nav className="nav">
             <Nav />
         </nav>
@@ -32,7 +28,7 @@ class HomePage extends React.Component {
         <InstaImages />
         <TicTocImages/>
         <YourBoards />
-      </div>
+      </main>
     );
   }
 }

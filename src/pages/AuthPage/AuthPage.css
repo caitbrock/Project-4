@@ -14,3 +14,9 @@
     cursor: pointer;
   }
   
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #21302D;
+  
+  }

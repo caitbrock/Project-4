@@ -55,9 +55,9 @@ class App extends Component {
       <div className="App">
         <Routes>
         { this.state.user ? (
-          <Route path ='/home' element={<HomePage user={this.state.user} setUserInState={this.setUserInState}/>} />
+          <Route path ='/' element={<HomePage user={this.state.user} setUserInState={this.setUserInState}/>} />
           )  : (
-          <Route path ='/' element={<AuthPage setUserInState={this.setUserInState}/>} />
+          <Route path ='/login' element={<AuthPage setUserInState={this.setUserInState}/>} />
         )};
         </Routes>
         </div>

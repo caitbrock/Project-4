@@ -3,7 +3,7 @@ import Profile from '../Profile/Profile';
 import Title from '../Title/Title';
 import UserLogOut from '../UserLogOut/UserLogOut';
 import Logo from '../Logo/Logo';
-
+import './Nav.css';
 
 class Nav extends Component {
   render() {
