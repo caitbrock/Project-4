@@ -30,6 +30,7 @@ export default class SignUpForm extends Component {
 
     if (!fetchResponse.ok) throw new Error('Fetch failed - Bad request');
     let token = await fetchResponse.json(); 
+    console.log(token)    
     localStorage.setItem('token', token);     
     const userDoc = JSON.parse(atob(token.split('.')[1])).user;
     this.props.setUserInState(userDoc);
@@ -43,7 +44,9 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
+      <>
       <div className='signup' style={{ backgroundImage: `url(${landing})` }}>
+      </div>
         <div className="form-container">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label>Name</label>
@@ -58,7 +61,8 @@ export default class SignUpForm extends Component {
           </form>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
-      </div>
+
+      </>
     );
   }
 }

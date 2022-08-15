@@ -19,9 +19,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <main className="component">
-        <nav className="nav">
-            <Nav />
-        </nav>
+        <Nav />
         <SubNav />
         <PageTitle />
         <Feed />

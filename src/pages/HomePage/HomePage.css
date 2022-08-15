@@ -74,15 +74,7 @@ div {
     text-align: center;
   }
   
-  .left{
-    display: flex;
-  }
-  
-  .right{
-    display: flex;
-    justify-content: flex-end;
-    
-  }
+
   .subnav{
     display: flex;
     justify-content: center;

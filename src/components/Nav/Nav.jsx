@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Profile from '../Profile/Profile';
-import Title from '../Title/Title';
 import UserLogOut from '../UserLogOut/UserLogOut';
 import Logo from '../Logo/Logo';
 import './Nav.css';
@@ -11,7 +10,6 @@ class Nav extends Component {
       <div className='nav'>
       <div className='left'>
           <Logo />
-          <Title />
        </div>
       <div className='right'>
           <Profile />
