@@ -46,96 +46,92 @@ div {
 .nav {
   display: flex;
   justify-content: space-between;
-  background-color: #E9EDC9;
-
+  background-color: #e9edc9;
 }
 
-.logo{
+.logo {
   justify-content: flex-start;
-  background-color: #FFFFFF
+  background-color: #ffffff;
 }
 
-.title{
+.title {
   justify-content: flex-start;
-  background-color: #FFFFFF
+  background-color: #ffffff;
 }
 
-.profile{
+.profile {
   justify-content: flex-end;
-  background-color: #FFFFFF
+  background-color: #ffffff;
 }
 
-.logout{
+.logout {
   justify-content: flex-end;
-  background-color: #FFFFFF
+  background-color: #ffffff;
 }
 
-.insta{
+.insta {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: #CCD5AE;
+  background-color: #ccd5ae;
   height: 45vh;
 }
 
 .instaimages {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 30vw;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
-.tictok{
+.tictok {
   display: flex;
-  background-color: #CCD5AE;
+  background-color: #ccd5ae;
   height: 45vh;
 }
 
 .tictokimages {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 30vw;
 }
 
-.viewmore{
+.viewmore {
   text-align: center;
   width: 10vw;
   margin: auto;
 }
 
-.pageimages{
+.pageimages {
   justify-content: center;
-
 }
 
-.pagetitle{
+.pagetitle {
   justify-content: center;
   text-align: center;
 }
 
-.left{
+.left {
   display: flex;
 }
 
-.right{
+.right {
   display: flex;
   justify-content: flex-end;
-  
 }
-.subnav{
+.subnav {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.mainnav{
+.mainnav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
-.yourboard{
+.yourboard {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -145,9 +141,15 @@ div {
   width: 30vw;
 }
 
-.feed{
+.feed {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-image: url('https://www.worldatlas.com/r/w960-q80/upload/39/f1/6e/shutterstock-231369109.jpg');
+  background-image: url("https://www.worldatlas.com/r/w960-q80/upload/39/f1/6e/shutterstock-231369109.jpg");
+}
+
+.addpost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
