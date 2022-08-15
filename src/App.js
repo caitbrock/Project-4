@@ -83,6 +83,7 @@ class App extends Component {
           </nav>
           <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
           {button}
+          <CreatePost />
         </div>
       </>
     );
