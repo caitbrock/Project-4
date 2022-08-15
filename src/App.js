@@ -16,14 +16,14 @@ class App extends Component {
   async componentDidMount() {
     let token = localStorage.getItem("token");
     try {
-      let fetchOrdersResponse = await fetch("/api/users/verify", {
+      let userLogin = await fetch("/api/users/verify", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      if (!fetchOrdersResponse.ok) throw new Error("Couldn't fetch orders");
-      let response = await fetchOrdersResponse.json();
+      if (!userLogin.ok) throw new Error("Couldn't fetch user");
+      let response = await userLogin.json();
 
       console.log(response);
 
@@ -38,17 +38,6 @@ class App extends Component {
       console.log(err);
     }
   }
-
-  // componentDidMount() {
-  //   let token = localStorage.getItem('token');
-  //    if (token){
-  //     let userDoc = JSON.parse(atob(token.split('.')[1])).user;
-  //     this.setState({user: userDoc});     
-  //   } else {
-  //     localStorage.removeItem("token")
-  //     this.setState({ user: null });
-  //   }
-  //  } 
 
   render() {
     return (
