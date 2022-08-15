@@ -1,14 +1,34 @@
-import React from 'react'
+import React from "react";
 
-
-function SubNav() {
+function SubNav(props) {
   return (
-    <div className='subnav'>
-       <div className='mainnav' onClick={() => {this.updateCurrentTabTo(1); this.boardTab()}}>Feed</div> 
-       <div className='mainnav' onClick={() => {this.updateCurrentTabTo(2); this.boardTab()}}>Inspo</div> 
-       <div className='mainnav' onClick={() => {this.updateCurrentTabTo(3); this.boardTab()}}>Boards</div> 
+    <div className="subnav">
+      <div
+        className="mainnav"
+        onClick={() => {
+          props.updateCurrentTabTo(1);
+        }}
+      >
+        Feed
+      </div>
+      <div
+        className="mainnav"
+        onClick={() => {
+          props.updateCurrentTabTo(2);
+        }}
+      >
+        Inspo
+      </div>
+      <div
+        className="mainnav"
+        onClick={() => {
+          props.updateCurrentTabTo(3);
+        }}
+      >
+        Boards
+      </div>
     </div>
-  )
+  );
 }
 
-export default SubNav
+export default SubNav;
