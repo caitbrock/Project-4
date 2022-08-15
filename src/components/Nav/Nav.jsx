@@ -12,7 +12,7 @@ class Nav extends Component {
           <Logo />
         </div>
         <div className="right">
-          <Profile />
+          <Profile setUserInState={this.props.setUserInState}/>
           <UserLogOut />
         </div>
       </div>
@@ -28,7 +28,7 @@ class Nav extends Component {
 
 //         <div className='right'>
 //           {this.state.showLogin ?
-//           <Button>Login</Button> :
+//           <Button><LoginForm/></Button> :
 //           <Profile/>
 // }
 //             <UserLogOut />
@@ -41,3 +41,5 @@ class Nav extends Component {
 // {this.state.showLogin ?
 //   <LoginForm setUserInState={this.props.setUserInState}/> :
 //   <SignUpForm setUserInState={this.props.setUserInState} />}
+
+export default Nav

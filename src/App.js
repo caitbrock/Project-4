@@ -42,18 +42,7 @@ class App extends Component {
   }
 
   render() {
-    const travelComp = this.state.currentTab;
-    let button;
-    if (travelComp == 1) {
-      button = <Feed />;
-    } else if (this.state.currentTab == 2) {
-      button = <Inspo />;
-    } else {
-      button = <YourBoards />;
-    }
-
     return (
-      <>
         <div className="App">
           <Routes>
             {this.state.user ? (
@@ -75,17 +64,6 @@ class App extends Component {
             ;
           </Routes>
         </div>
-        <div className="component">
-          App
-          <nav className="component">
-            <Nav />
-            <PageTitle />
-          </nav>
-          <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
-          {button}
-          <CreatePost />
-        </div>
-      </>
     );
   }
 }

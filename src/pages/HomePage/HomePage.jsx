@@ -7,7 +7,7 @@ import Nav from '../../components/Nav/Nav';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import TicTocImages from '../../components/TicTokImages/TicTokImages';
 import YourBoards from '../../components/YourBoards/YourBoards';
-import SubNav from '../../components/SubNav/SubNav';
+import SubNav from '../../components/SubNav/SubNav'
 import './HomePage.css';
 
 class HomePage extends React.Component {
