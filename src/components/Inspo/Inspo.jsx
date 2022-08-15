@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import InstaImages from "../InstaImages/InstaImages";
 
 function Inspo() {
   return (
-    <div>Inspo</div>
-  )
+    <>
+      <div>Inspo</div>
+      <InstaImages />
+    </>
+  );
 }
 
-export default Inspo
+export default Inspo;

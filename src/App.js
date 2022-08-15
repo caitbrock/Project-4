@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';
-import AuthPage from './pages/AuthPage/AuthPage';
+import React, { Component } from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import AuthPage from "./pages/AuthPage/AuthPage";
 
 class App extends Component {
   state = {
     user: null,
+    currentTab: 1,
   };
 
   setUserInState = (incomingUserData) => {
-    this.setState({user: incomingUserData });
+    console.log(this.state.currentTab);
+    this.setState({ user: incomingUserData });
   };
 
   async componentDidMount() {
@@ -40,16 +42,49 @@ class App extends Component {
   }
 
   render() {
+    const travelComp = this.state.currentTab;
+    let button;
+    if (travelComp == 1) {
+      button = <Feed />;
+    } else if (this.state.currentTab == 2) {
+      button = <Inspo />;
+    } else {
+      button = <YourBoards />;
+    }
+
     return (
-      <div className="App">
-        <Routes>
-        { this.state.user ? (
-          <Route path ='/home' element={<HomePage user={this.state.user} setUserInState={this.setUserInState}/>} />
-          )  : (
-          <Route path ='/login' element={<AuthPage setUserInState={this.setUserInState}/>} />
-        )};
-        </Routes>
+      <>
+        <div className="App">
+          <Routes>
+            {this.state.user ? (
+              <Route
+                path="/home"
+                element={
+                  <HomePage
+                    user={this.state.user}
+                    setUserInState={this.setUserInState}
+                  />
+                }
+              />
+            ) : (
+              <Route
+                path="/login"
+                element={<AuthPage setUserInState={this.setUserInState} />}
+              />
+            )}
+            ;
+          </Routes>
         </div>
+        <div className="component">
+          App
+          <nav className="component">
+            <Nav />
+            <PageTitle />
+          </nav>
+          <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
+          {button}
+        </div>
+      </>
     );
   }
 }
