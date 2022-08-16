@@ -1,9 +1,26 @@
+@media (max-width: 1024px)  {
+    .box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .boxes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}   
+
 .signup {
     position: relative;
     background-size: 100% auto;
+    background-size: cover;
     z-index: -2;
     background-repeat: no-repeat;
-    background-position: 0%;
+    background-position: 50% 35%;
+    width: 100%;
 }
 
 .logo-white {
@@ -19,10 +36,9 @@
 }
 
 .box{
-    height: 300px;
-    width: 300px;
+    height: 30vh;
+    width: 25%;
     margin-bottom: 50px;
-    padding: 20px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.464);
     z-index: -1;
@@ -31,16 +47,21 @@
 .Number{
     color: white;
     font-size: 100px;
-
+    max-height: 40%;
 }
+
 
 .State{
     color: black;
+    margin: 10%;
+    max-height: 30%;
 
 }
 
 .Instructions{
     color: black;
+    margin: 10%;
+    max-height: 30%;
 
 }
 

@@ -1,6 +1,3 @@
-
-
-
 export default function Profile() {
   const array = [0, 0, 0, 0, 0, 0];
 

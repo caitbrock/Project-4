@@ -57,7 +57,7 @@ export default class SignUpForm extends Component {
         <div className='boxes'>
           <div className='box'>
             <div className='Number'>1</div>
-            <div className='State'><h4>Sign Up</h4></div>
+            <div className='State'><h4>Create Your Profile</h4></div>
             <div className='Instructions'><p>Create a profile using your email</p></div>
           </div>
           <div className='box'>

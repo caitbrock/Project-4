@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 class App extends Component {
   state = {
@@ -44,8 +45,7 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <Routes>
-            {this.state.user ? (
+          <Routes>{this.state.user ? (
               <Route
                 path="/home"
                 element={
@@ -57,11 +57,12 @@ class App extends Component {
               />
             ) : (
               <Route
-                path="/login"
+                path="/"
                 element={<AuthPage setUserInState={this.setUserInState} />}
               />
             )}
-            ;
+            <Route path='/login'
+            element={<LoginPage />} />
           </Routes>
         </div>
     );
