@@ -3,6 +3,13 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
+import Feed from "./components/Feed/Feed";
+import Inspo from "./components/Inspo/Inspo";
+import Nav from "./components/Nav/Nav.jsx";
+import PageTitle from "./components/PageTitle/PageTitle";
+import SubNav from "./components/SubNav/SubNav";
+import CreatePost from "./components/CreatePost/CreatePost";
+import YourBoards from "./components/YourBoards/YourBoards";
 
 class App extends Component {
   state = {
@@ -13,6 +20,10 @@ class App extends Component {
   setUserInState = (incomingUserData) => {
     console.log(this.state.currentTab);
     this.setState({ user: incomingUserData });
+  };
+
+  updateCurrentTabTo = (tab) => {
+    this.setState({ currentTab: tab });
   };
 
   async componentDidMount() {
