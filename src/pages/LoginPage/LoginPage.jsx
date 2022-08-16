@@ -3,7 +3,7 @@ import Nav from '../../components/Nav/Nav';
 import landing from '../../LandingPage-SS.jpg';
 import logo from '../../Logo-white.png';
 
-export default class SignUpForm extends Component {
+export default class LoginForm extends Component {
   state = {
     email: '',
     password: '',

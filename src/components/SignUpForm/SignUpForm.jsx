@@ -15,7 +15,8 @@ export default class SignUpForm extends Component {
     email: '',
     password: '',
     confirm: '',
-    error: ''
+    error: '',
+    // interests: ''
   };
 
   handleChange = (evt) => {
@@ -81,14 +82,14 @@ export default class SignUpForm extends Component {
 
         <form autoComplete="off" onSubmit={this.handleSubmit}>
           <div className='step-instructions'> <h2>1. Create an account using email.</h2></div>
-          <div className='1'>
+          <div className='one'>
             <div className='label'><label>Name</label><input type="text" name="name" value={this.state.name} onChange={this.handleChange} required /></div>
             <div className='label'><label>Email</label><input type="email" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
             <div className='label'><label>Password</label><input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
-            <div className='label'><label>Confirm</label><input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required /></div>
+            <div className='label'><label>Confirm Password</label><input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required /></div>
           </div>
 
-          <div className='2'>
+          <div className='two'>
             <div className='step-instructions'> <h2>2. Select your travel interests?</h2></div>
             <div className='traveltags'>
               <div>North America <Checkbox {...label} color="default" /></div>
@@ -96,12 +97,12 @@ export default class SignUpForm extends Component {
               <div> Asia <Checkbox {...label} color="default" /></div>
               <div> Africa <Checkbox {...label} color="default" /></div>
               <div> Europe <Checkbox {...label} color="default" /></div>
-              <div> Austraillia <Checkbox {...label} color="default" /></div>
+              <div> Austrailia <Checkbox {...label} color="default" /></div>
               <div> Antarctica <Checkbox {...label} color="default" /></div>
             </div>
           </div>
 
-          <div className='3'>
+          <div className='three'>
             <div className='step-instructions'> <h2>3. Get inspired and start planning your trip.</h2></div>
             <button className='submit'disabled={disable}>
                 <span>

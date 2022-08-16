@@ -29,7 +29,6 @@ class App extends Component {
       let response = await userLogin.json();
 
       console.log(response);
-
       if (token && response.verified) {
         let userDoc = JSON.parse(atob(token.split(".")[1])).user;
         this.setState({ user: userDoc });
@@ -45,25 +44,14 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <Routes>{this.state.user ? (
-              <Route
-                path="/home"
-                element={
-                  <HomePage
-                    user={this.state.user}
-                    setUserInState={this.setUserInState}
-                  />
-                }
-              />
-            ) : (
-              <Route
-                path="/"
-                element={<AuthPage setUserInState={this.setUserInState} />}
-              />
-            )}
-            <Route path='/login'
-            element={<LoginPage />} />
+          {this.state.user ? (
+          <Routes>
+            <Route path="/" element={<HomePage user={this.state.user} setUserInState={this.setUserInState}/>} />
+
+            <Route path='/login'element={<LoginPage />} />
           </Routes>
+                      ) : (<AuthPage user={this.state.user} setUserInState={this.setUserInState} />
+                )}
         </div>
     );
   }

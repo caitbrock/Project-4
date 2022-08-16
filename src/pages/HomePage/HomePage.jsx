@@ -16,10 +16,20 @@ class HomePage extends React.Component {
     show: 1
   };
 
+  async componentDidMount() {
+    try {
+      let jwt = localStorage.getItem('token')
+      let fetchOrdersResponse = await fetch('/api/orders', {headers: {'Authorization': 'Bearer ' + jwt}})
+      let orders = await fetchOrdersResponse.json(); 
+      this.setState({ orderHistory: orders})
+    } catch (err) {
+      console.error('ERROR:', err)
+    }
+  }
   render() {
     return (
       <main className="component">
-        <Nav />
+        <Nav user={this.props.user} setUserInState={this.props.setUserInState}/>
         <SubNav />
         <PageTitle />
         <Feed />

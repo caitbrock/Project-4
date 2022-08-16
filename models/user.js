@@ -1,5 +1,4 @@
 const { imageListClasses } = require("@mui/material");
-module.exports = mongoose.model("User", userSchema);
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -20,6 +19,7 @@ const userSchema = new Schema(
       minLength: 3,
       requred: true,
     },
+    // interests: {type: String, required: true },
     travelCollection: {
       Object,
     },
@@ -29,7 +29,7 @@ const userSchema = new Schema(
     followers: Object,
     following: Object,
     contactInfo: String,
-    profile_img: Image,
+    // profile_img: Image,
     Inspo_tags: Object,
     board: { type: Schema.Types.ObjectId, ref: "Board" },
   },

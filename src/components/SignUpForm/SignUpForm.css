@@ -24,8 +24,10 @@
 }
 
 .logo-white {
-    margin-top: 350px;
+    margin-top: 300px;
     margin-bottom: 50px;
+    width: 80vw;
+    height: auto;
 }
 
 .boxes{
@@ -35,34 +37,36 @@
     align-items: center;
 }
 
+
 .box{
     height: 30vh;
     width: 25%;
     margin-bottom: 50px;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.464);
-    z-index: -1;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: -10;
+    backdrop-filter: blur(4px);
 }
 
 .Number{
     color: white;
     font-size: 100px;
     max-height: 40%;
+    z-index: 10;
 }
-
 
 .State{
     color: black;
     margin: 10%;
     max-height: 30%;
-
+    z-index: 10;
 }
 
 .Instructions{
     color: black;
     margin: 10%;
     max-height: 30%;
-
+    z-index: 10;
 }
 
 .part1 {
@@ -76,6 +80,11 @@
 .part3 {
     height: 500px;
 
+}
+.one {
+    display: inline-block;
+    width: auto;
+    text-align: right;
 }
 
 .letsgetstarted{
