@@ -1,10 +1,14 @@
 import { Component } from 'react';
+import Nav from '../../components/Nav/Nav';
+import landing from '../../LandingPage-SS.jpg';
+import logo from '../../Logo-white.png';
 
-export default class SignUpForm extends Component {
+export default class LoginForm extends Component {
   state = {
     email: '',
     password: '',
-    error: ''
+    error: '',
+    showLogin: true,
   };
 
   handleChange = (evt) => {
@@ -39,16 +43,19 @@ export default class SignUpForm extends Component {
   render() {
     return (
       <div>
+        <Nav />
+        <div className='signup' style={{ backgroundImage: `url(${landing})` }}>
+        <img className="logo-white" src={logo} height='200px'/>
         <div className="form-container" onSubmit={this.handleSubmit}>
+        </div>
           <form autoComplete="off" >
-            <label>Email</label>
-            <input type="text" name="email" value={this.state.email} onChange={this.handleChange} required />
-            <label>Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-            <button type="submit">LOG IN</button>
+            <div><label>Email</label><input type="text" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
+            <div><label>Password</label><input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
+            <div><button type="submit">LOG IN</button></div>
           </form>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
+        
       </div>
     );
   }

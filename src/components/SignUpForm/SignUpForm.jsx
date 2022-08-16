@@ -15,9 +15,16 @@ export default class SignUpForm extends Component {
     email: '',
     password: '',
     confirm: '',
-    error: ''
+    error: '',
+    // interests: ''
   };
 
+  handleChange = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value,
+      error: ''
+    });
+  };
 
   handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -45,13 +52,13 @@ export default class SignUpForm extends Component {
   render() {
     const disable = this.state.password !== this.state.confirm;
     return (
-      <>
+    <>
       <div className='signup' style={{ backgroundImage: `url(${landing})` }}>
       <img className="logo-white" src={logo} height='200px'/>
         <div className='boxes'>
           <div className='box'>
             <div className='Number'>1</div>
-            <div className='State'><h4>Sign Up</h4></div>
+            <div className='State'><h4>Create Your Profile</h4></div>
             <div className='Instructions'><p>Create a profile using your email</p></div>
           </div>
           <div className='box'>
@@ -67,58 +74,44 @@ export default class SignUpForm extends Component {
         </div>
       </div>
 
-
       <div className="form-container" style={{ backgroundImage: `url(${decorative})` }}>
-      <form autoComplete="off" onSubmit={this.handleSubmit}>
-
-        <div className='part1'>
-          <div className='letsgetstarted'>
-            <div className='letsgetstarted-text'><h3>Let's get started!</h3></div>
-            <ExpandCircleDownSharp className='letsgetstarted-text'></ExpandCircleDownSharp>
-          </div>
-          <div className='step-instructions'> <h2>1. Create an account using email.</h2></div>
-          <div className='input'>
-            <div className='label'><label>Name</label>
-            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required /></div>
-            <div className='label'><label>Email</label>
-            <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
-            <div className='label'><label>Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
-            <div className='label'><label>Confirm</label>
-            <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required /></div>
-          </div>
+        <div className='letsgetstarted'>
+          <div className='letsgetstarted-text'><h3>Let's get started!</h3></div>
+          <ExpandCircleDownSharp className='letsgetstarted-text'></ExpandCircleDownSharp>
         </div>
 
-          <div className='part2'>
-          <div className='step-instructions'> <h2>2. Select your travel interests?</h2></div>
-          <div className='traveltags'>
-            <div>North America <Checkbox {...label} color="default" /></div>
-            <div> South America <Checkbox {...label} color="default" /></div>
-            <div> Asia <Checkbox {...label} color="default" /></div>
-            <div> Africa <Checkbox {...label} color="default" /></div>
-            <div> Europe <Checkbox {...label} color="default" /></div>
-            <div> Austraillia <Checkbox {...label} color="default" /></div>
-            <div> Antarctica <Checkbox {...label} color="default" /></div>
-          </div>
+        <form autoComplete="off" onSubmit={this.handleSubmit}>
+          <div className='step-instructions'> <h2>1. Create an account using email.</h2></div>
+          <div className='one'>
+            <div className='label'><label>Name</label><input type="text" name="name" value={this.state.name} onChange={this.handleChange} required /></div>
+            <div className='label'><label>Email</label><input type="email" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
+            <div className='label'><label>Password</label><input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
+            <div className='label'><label>Confirm Password</label><input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required /></div>
           </div>
 
-          <div className='part3'>
-          <div className='step-instructions'> <h2>3. Get inspired and start planning your trip.</h2></div>
-          
-            <button className='Submit'>
-              <span>
-                <LocalAirportOutlinedIcon>
-                </LocalAirportOutlinedIcon>
-              </span>
+          <div className='two'>
+            <div className='step-instructions'> <h2>2. Select your travel interests?</h2></div>
+            <div className='traveltags'>
+              <div>North America <Checkbox {...label} color="default" /></div>
+              <div> South America <Checkbox {...label} color="default" /></div>
+              <div> Asia <Checkbox {...label} color="default" /></div>
+              <div> Africa <Checkbox {...label} color="default" /></div>
+              <div> Europe <Checkbox {...label} color="default" /></div>
+              <div> Austrailia <Checkbox {...label} color="default" /></div>
+              <div> Antarctica <Checkbox {...label} color="default" /></div>
+            </div>
+          </div>
+
+          <div className='three'>
+            <div className='step-instructions'> <h2>3. Get inspired and start planning your trip.</h2></div>
+            <button className='submit'disabled={disable}>
+                <span>
+                  <LocalAirportOutlinedIcon />
+                </span>
             </button>
-            <p className="error-message">&nbsp;{this.state.error}</p>
           </div>
         </form>
-    </div>
-  </>
-    );
-  }
-}
-
-
-
+      <p className="error-message">&nbsp;{this.state.error}</p>
+      </div>
+    </>
+    )}};

@@ -19,6 +19,7 @@ function verify(req, res) {
 }
 
 async function create(req, res) {
+  console.log(req.body)
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, SALT_ROUNDS);
     const user = await User.create({
@@ -29,6 +30,7 @@ async function create(req, res) {
     const token = jwt.sign({ user }, process.env.SECRET, { expiresIn: "24h" });
     res.status(200).json(token);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 }

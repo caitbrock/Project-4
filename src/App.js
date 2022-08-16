@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 class App extends Component {
   state = {
@@ -28,7 +29,6 @@ class App extends Component {
       let response = await userLogin.json();
 
       console.log(response);
-
       if (token && response.verified) {
         let userDoc = JSON.parse(atob(token.split(".")[1])).user;
         this.setState({ user: userDoc });
@@ -42,50 +42,17 @@ class App extends Component {
   }
 
   render() {
-    const travelComp = this.state.currentTab;
-    let button;
-    if (travelComp == 1) {
-      button = <Feed />;
-    } else if (this.state.currentTab == 2) {
-      button = <Inspo />;
-    } else {
-      button = <YourBoards />;
-    }
-
     return (
-      <>
         <div className="App">
+          {this.state.user ? (
           <Routes>
-            {this.state.user ? (
-              <Route
-                path="/home"
-                element={
-                  <HomePage
-                    user={this.state.user}
-                    setUserInState={this.setUserInState}
-                  />
-                }
-              />
-            ) : (
-              <Route
-                path="/login"
-                element={<AuthPage setUserInState={this.setUserInState} />}
-              />
-            )}
-            ;
+            <Route path="/" element={<HomePage user={this.state.user} setUserInState={this.setUserInState}/>} />
+
+            <Route path='/login'element={<LoginPage />} />
           </Routes>
+                      ) : (<AuthPage user={this.state.user} setUserInState={this.setUserInState} />
+                )}
         </div>
-        <div className="component">
-          App
-          <nav className="component">
-            <Nav />
-            <PageTitle />
-          </nav>
-          <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
-          {button}
-          <CreatePost />
-        </div>
-      </>
     );
   }
 }

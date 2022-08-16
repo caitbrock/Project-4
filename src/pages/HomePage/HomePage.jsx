@@ -7,7 +7,7 @@ import Nav from '../../components/Nav/Nav';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import TicTocImages from '../../components/TicTokImages/TicTokImages';
 import YourBoards from '../../components/YourBoards/YourBoards';
-import SubNav from '../../components/SubNav/SubNav';
+import SubNav from '../../components/SubNav/SubNav'
 import './HomePage.css';
 
 class HomePage extends React.Component {
@@ -16,10 +16,20 @@ class HomePage extends React.Component {
     show: 1
   };
 
+  async componentDidMount() {
+    try {
+      let jwt = localStorage.getItem('token')
+      let fetchOrdersResponse = await fetch('/api/orders', {headers: {'Authorization': 'Bearer ' + jwt}})
+      let orders = await fetchOrdersResponse.json(); 
+      this.setState({ orderHistory: orders})
+    } catch (err) {
+      console.error('ERROR:', err)
+    }
+  }
   render() {
     return (
       <main className="component">
-        <Nav />
+        <Nav user={this.props.user} setUserInState={this.props.setUserInState}/>
         <SubNav />
         <PageTitle />
         <Feed />

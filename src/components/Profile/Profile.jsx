@@ -1,9 +1,14 @@
-import React from 'react'
+export default function Profile() {
+  const array = [0, 0, 0, 0, 0, 0];
 
-function Profile() {
   return (
-    <div className='profile'>Profile</div>
+    <div>
+          <div style={{ width: "200px" }}>
+    </div>
+      
+      <h5 className="card-title">
+      {/* {this.uppercase(this.props.user.name)} */}
+    </h5>
+    </div>
   )
 }
-
-export default Profile
