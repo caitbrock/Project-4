@@ -29,9 +29,9 @@ export default class SignUpForm extends React.Component {
   };
 
   handleSelect = (evt) => {
-      // this.setState(state => ({
-      //   interests: [...state.interests, interests]
-      // }));
+      this.setState(state => ({
+        interests: [...state.interests, evt.target.value]
+      }));
     }
 
   handleSubmit = async (evt) => {

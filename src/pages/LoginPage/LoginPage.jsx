@@ -9,7 +9,6 @@ export default class LoginForm extends Component {
     email: '',
     password: '',
     error: '',
-    showLogin: true,
   };
 
   handleChange = (evt) => {

@@ -1,9 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import Profile from "../Profile/Profile";
 import UserLogOut from "../UserLogOut/UserLogOut";
 import Logo from "../Logo/Logo";
 import LoginButton from '../LoginButton/LoginButton'
-import { Route, Routes } from "react-router-dom";
 import "./Nav.css";
 
 function Nav(props) {
