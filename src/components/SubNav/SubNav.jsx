@@ -25,7 +25,23 @@ function SubNav(props) {
           props.updateCurrentTabTo(3);
         }}
       >
-        Boards
+        Add Pci
+      </div>
+      <div
+        className="mainnav"
+        onClick={() => {
+          props.updateCurrentTabTo(4);
+        }}
+      >
+        Add Post
+      </div>
+      <div
+        className="mainnav"
+        onClick={() => {
+          props.updateCurrentTabTo(5);
+        }}
+      >
+        Chat
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import PageTitle from "./components/PageTitle/PageTitle";
 import SubNav from "./components/SubNav/SubNav";
 import CreatePost from "./components/CreatePost/CreatePost";
 import YourBoards from "./components/YourBoards/YourBoards";
+import Socket from "./components/Socket/Socket";
 
 class App extends Component {
   state = {
@@ -59,8 +60,12 @@ class App extends Component {
       button = <Feed />;
     } else if (this.state.currentTab == 2) {
       button = <Inspo />;
-    } else {
+    } else if (this.state.currentTab == 3) {
       button = <YourBoards />;
+    } else if (this.state.currentTab == 4) {
+      button = <CreatePost />;
+    } else {
+      button = <Socket />;
     }
 
     return (
@@ -94,7 +99,6 @@ class App extends Component {
           </nav>
           <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
           {button}
-          <CreatePost />
         </div>
       </>
     );
