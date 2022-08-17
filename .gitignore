@@ -25,3 +25,5 @@ yarn-error.log*
 #package.json and webpack 
 package.json
 webpack
+
+#git rm --cache package.json before I push

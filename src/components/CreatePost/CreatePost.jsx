@@ -1,13 +1,19 @@
 import React from "react";
-import Link from "react-router-dom";
+import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import FileUpload from "../FileUpload/FileUpload";
-import DraggableUploader from "../FileUpload/DraggableUploader";
 
 class CreatePost extends React.Component {
   state = {
-    Caption: "",
-    Description: "",
-    Destination: "",
+    title: "",
+    description: "",
+    destination: "",
+  };
+
+  handleChange = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value,
+      error: "",
+    });
   };
 
   handlePost = async (e) => {
@@ -21,14 +27,14 @@ class CreatePost extends React.Component {
           Authorization: "Bearer " + jwt,
         },
         body: JSON.stringify({
-          Caption: this.state.Caption,
-          Description: this.state.Description,
-          Destination: this.state.Destination,
+          title: this.state.title,
+          description: this.state.description,
+          destination: this.state.destination,
         }), // <-- send this object to server
       });
       let serverResponse = await fetchResponse.json(); // <-- decode fetch response
       console.log("Success:", serverResponse); // <-- log server response
-      this.setState({ Caption: "", Description: "", Destination: "" }); // if order sent without errors, set state to empty
+      this.setState({ title: "", description: "", destination: "" }); // if order sent without errors, set state to empty
     } catch (err) {
       console.error("Error:", err); // <-- log if error
     }
@@ -40,19 +46,43 @@ class CreatePost extends React.Component {
         <FileUpload />
         <form onSubmit={this.handlePost}>
           <label>
-            Caption: <input type="text" name="Caption" />{" "}
+            Caption:
+            <input
+              type="text"
+              name="title"
+              value={this.state.title}
+              onChange={this.handleChange}
+              required
+            />
           </label>
           <br />
           <label>
-            Description: <input type="text" name="Description" />{" "}
+            Description:
+            <input
+              type="text"
+              name="description"
+              value={this.state.description}
+              onChange={this.handleChange}
+              required
+            />
           </label>
           <br />
           <label>
-            Destination: <input type="text" name="Destination" />{" "}
+            Destination:
+            <input
+              type="text"
+              name="destination"
+              value={this.state.destination}
+              onChange={this.handleChange}
+              required
+            />
           </label>
-          <input type="submit" value="Add Post" />
+          <button className="submit">
+            <span>
+              <AddPhotoAlternateIcon />
+            </span>
+          </button>
         </form>
-        <DraggableUploader />
       </div>
     );
   }

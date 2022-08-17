@@ -18,9 +18,9 @@ async function create(req, res) {
   try {
     // 1. put the order in the database (the data will be incoming via `req.body`)
     const post = await Post.create({
-      Caption: req.body.lineItems,
-      Desription: req.body.Desription,
-      Destination: req.body.Destination,
+      title: req.body.title,
+      desription: req.body.desription,
+      destination: req.body.destination,
     });
     console.log(post);
     // 2. send a response to frontend - typically we send back the newly created order, or all the list of orders, or just an 'ok'

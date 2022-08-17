@@ -7,6 +7,14 @@ function SubNav(props) {
       <div
         className="mainnav"
         onClick={() => {
+          props.updateCurrentTabTo(1);
+        }}
+      >
+        Feed
+      </div>
+      <div
+        className="mainnav"
+        onClick={() => {
           props.updateCurrentTabTo(2);
         }}
       >

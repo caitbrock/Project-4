@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 const postSchema = new Schema(
   {
     id: Number,
-    Caption: String,
-    Description: String,
-    Destination: String,
+    title: String,
+    description: String,
+    destination: String,
   },
   {
     timestamps: true,
