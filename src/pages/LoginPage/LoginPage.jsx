@@ -2,13 +2,14 @@ import { Component } from 'react';
 import Nav from '../../components/Nav/Nav';
 import landing from '../../LandingPage-SS.jpg';
 import logo from '../../Logo-white.png';
+import './LoginPage.css';
+
 
 export default class LoginForm extends Component {
   state = {
     email: '',
     password: '',
     error: '',
-    showLogin: true,
   };
 
   handleChange = (evt) => {
@@ -18,13 +19,14 @@ export default class LoginForm extends Component {
     });
   };
 
+
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
       const fetchResponse = await fetch('/api/users/login', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({name: this.state.name, email: this.state.email, password: this.state.password,
+        body: JSON.stringify({email: this.state.email, password: this.state.password,
         }),
       });
 
@@ -44,17 +46,24 @@ export default class LoginForm extends Component {
     return (
       <div>
         <Nav />
-        <div className='signup' style={{ backgroundImage: `url(${landing})` }}>
-        <img className="logo-white" src={logo} height='200px'/>
-        <div className="form-container" onSubmit={this.handleSubmit}>
+        <div className='login' style={{ backgroundImage: `url(${landing})` }}>
+        <img className="logo-white-login" src={logo} height='200px'/>
+        <div className='welcome'> <h1>Welcome Back Traveller!</h1></div>
         </div>
-          <form autoComplete="off" >
-            <div><label>Email</label><input type="text" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
-            <div><label>Password</label><input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
-            <div><button type="submit">LOG IN</button></div>
+        <div className="form-container">
+          <form autoComplete="off" onSubmit={this.handleSubmit}>
+            <div className='one'>
+            <div className='label'><label>Email</label><input type="text" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
+            <div className='label'><label>Password</label><input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
+            <button className='submit'>
+                <span>
+                  Login
+                </span>
+            </button>
+            </div>
+            <p className="error-message">&nbsp;{this.state.error}</p>
           </form>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
         
       </div>
     );

@@ -10,13 +10,6 @@ module.exports = {
   verify,
 };
 
-function verify(req, res) {
-  if (req.user) {
-    res.status(200).json({ verified: true });
-    return;
-  }
-  res.status(200).json({ verified: false });
-}
 
 async function create(req, res) {
   console.log(req.body)
@@ -26,6 +19,7 @@ async function create(req, res) {
       name: req.body.name,
       email: req.body.email,
       password: hashedPassword,
+      interests: req.body.interests
     });
     const token = jwt.sign({ user }, process.env.SECRET, { expiresIn: "24h" });
     res.status(200).json(token);
@@ -45,4 +39,12 @@ async function login(req, res) {
   } catch {
     res.status(400).json("Bad Credentials");
   }
+}
+
+function verify(req, res) {
+  if (req.user) {
+    res.status(200).json({ verified: true });
+    return;
+  }
+  res.status(200).json({ verified: false });
 }

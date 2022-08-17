@@ -1,8 +1,11 @@
 import React from 'react'
+import "./PageTitle.css";
 
 function PageTitle(props) {
   return (
-    <div className='pagetitle'>Page Title {props.number}</div>
+    <>
+    <div className='pagetitle'>Your inspo. {props.number}</div>
+    </>
   )
 }
 

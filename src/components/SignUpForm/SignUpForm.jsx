@@ -5,18 +5,19 @@ import './SignUpForm.css';
 import logo from '../../Logo-white.png';
 import ExpandCircleDownSharp from '@mui/icons-material/ExpandCircleDownSharp';
 import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import LocalAirportOutlinedIcon from '@mui/icons-material/LocalAirportOutlined';
+import React from 'react'
 
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
-export default class SignUpForm extends Component {
+export default class SignUpForm extends React.Component {
   state = {
     name: '',
     email: '',
     password: '',
     confirm: '',
     error: '',
-    // interests: ''
+    interests: [],
   };
 
   handleChange = (evt) => {
@@ -26,13 +27,19 @@ export default class SignUpForm extends Component {
     });
   };
 
+  handleSelect = (evt) => {
+      this.setState(state => ({
+        interests: [...state.interests, evt.target.value]
+      }));
+    }
+
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
       const fetchResponse = await fetch('/api/users/signup', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({name: this.state.name, email: this.state.email, password: this.state.password,
+        body: JSON.stringify({name: this.state.name, email: this.state.email, password: this.state.password, interests: this.state.interests
         }),
       });
 
@@ -64,12 +71,12 @@ export default class SignUpForm extends Component {
           <div className='box'>
             <div className='Number'>2</div>
             <div className='State'><h4>Choose Your Inspo</h4></div>
-            <div className='Instructions'><p>Select cities/countries/activies you are interested in.</p></div>
+            <div className='Instructions'><p>Select your travel interests</p></div>
           </div>
           <div className='box'>
             <div className='Number'>3</div>
             <div className='State'><h4>Start Your Planning</h4></div>
-            <div className='Instructions'><p>Click Submit and off you Go!</p></div>
+            <div className='Instructions'><p>Click submit and off you go</p></div>
           </div>
         </div>
       </div>
@@ -90,20 +97,23 @@ export default class SignUpForm extends Component {
           </div>
 
           <div className='two'>
-            <div className='step-instructions'> <h2>2. Select your travel interests?</h2></div>
+            <div className='step-instructions'> <h2>2. Select some travel interests to <br /> get you started.</h2></div>
             <div className='traveltags'>
-              <div>North America <Checkbox {...label} color="default" /></div>
-              <div> South America <Checkbox {...label} color="default" /></div>
-              <div> Asia <Checkbox {...label} color="default" /></div>
-              <div> Africa <Checkbox {...label} color="default" /></div>
-              <div> Europe <Checkbox {...label} color="default" /></div>
-              <div> Austrailia <Checkbox {...label} color="default" /></div>
-              <div> Antarctica <Checkbox {...label} color="default" /></div>
+            <FormGroup>
+            <FormControlLabel control={<Checkbox value="North America" onChange={this.handleSelect} />} label="North America" />
+            <FormControlLabel control={<Checkbox value="South America" onChange={this.handleSelect} />} label="South America" />
+            <FormControlLabel control={<Checkbox value="Asia" onChange={this.handleSelect} />} label="Asia" />
+            <FormControlLabel control={<Checkbox value="Africa" onChange={this.handleSelect} />} label="Africa" />
+            <FormControlLabel control={<Checkbox value="Austrailia" onChange={this.handleSelect} />} label="Australia" />
+            <FormControlLabel control={<Checkbox value="Antarctica" onChange={this.handleSelect} />} label="Antactica" />
+            <FormControlLabel control={<Checkbox value="Europe" onChange={this.handleSelect} />} label="Europe" />
+            </FormGroup>
+
             </div>
           </div>
 
           <div className='three'>
-            <div className='step-instructions'> <h2>3. Get inspired and start planning your trip.</h2></div>
+            <div className='step-instructions'> <h2>3. Get inspired and start planning <br /> your trip.</h2></div>
             <button className='submit'disabled={disable}>
                 <span>
                   <LocalAirportOutlinedIcon />

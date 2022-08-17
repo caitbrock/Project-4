@@ -1,14 +1,13 @@
-export default function Profile() {
-  const array = [0, 0, 0, 0, 0, 0];
+import React from 'react'
+import "./Profile.css";
+import avatar from '../../Avatar.png'
 
+function Profile() {
   return (
-    <div>
-          <div style={{ width: "200px" }}>
-    </div>
-      
-      <h5 className="card-title">
-      {/* {this.uppercase(this.props.user.name)} */}
-    </h5>
+    <div className='Avatar'>
+      <img src={avatar}/>
     </div>
   )
 }
+
+export default Profile
