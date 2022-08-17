@@ -1,0 +1,16 @@
+.Avatar{
+    color: white;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+
+}
+
+.Avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}

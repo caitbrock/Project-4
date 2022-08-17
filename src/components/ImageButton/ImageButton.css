@@ -1,0 +1,17 @@
+.image{
+    margin-top: 180px;
+    justify-content: center;
+    align-items: center;
+    background-color: #D4A373;
+    border-radius: 20px;
+    border: 0;
+    color: #242424;
+    width: 18vw;
+    max-width: 300px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+span {
+    margin-left: 10px;
+}

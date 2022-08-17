@@ -25,6 +25,20 @@ const userSchema = new Schema(
 );
 
 module.exports = mongoose.model("User", userSchema);
+//>>>>>>> cad01bc12a587687d63b420f8f8a6f536c6ecec6
+
+// //
+// timestamps: true,
+// toJSON: {
+//   transform: function (doc, ret) {
+//     delete ret.password;
+//     return ret;
+//   },
+// },
+// }
+// );
+
+module.exports = mongoose.model("User", userSchema);
 
 // const mongoose = require("mongoose");
 // const Schema = mongoose.Schema;
