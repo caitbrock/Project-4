@@ -1,17 +1,16 @@
-.signup {
+.login {
     position: relative;
     background-size: 100% auto;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 500px;
+    height: 50vh;
+    background-position: 50% 35%;
 }
 
-.logo-white {
-    margin-top: 100px;
-    margin-bottom: 10px;
+.logo-white-login{
+margin-top: 200px;
 }
-
 .form-container{
     display: flex;
     flex-direction: column;

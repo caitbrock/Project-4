@@ -59,23 +59,16 @@ export default function DeletableChips(props) {
   setChipData(interestData)
   }, [props.user.interests])
 
+  // React.setState((evt) => {
+  //     this.setState(state => ({
+  //       interests: [...state.interests, evt.target.value]
+  //     }));
+  //   }
+  // )
 
   const handleDelete = (chipToDelete) => () => {
     setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
   };
-
-  // const requestSearch = (searchedVal: label) => {
-  //   const filteredRows = originalRows.filter((row) => {
-  //     return row.name.toLowerCase().includes(searchedVal.toLowerCase());
-  //   });
-  //   setRows(filteredRows);
-  // };
-
-  // const cancelSearch = () => {
-  //   setSearched("");
-  //   requestSearch(searched);
-  // };
-
 
   const customTheme = createTheme({
     palette: {

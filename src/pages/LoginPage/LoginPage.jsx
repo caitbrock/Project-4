@@ -24,7 +24,7 @@ export default class LoginForm extends Component {
     evt.preventDefault();
     try {
       const fetchResponse = await fetch('/api/users/login', {
-        method: 'GET',
+        method: 'POST',
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({email: this.state.email, password: this.state.password,
         }),
@@ -46,8 +46,8 @@ export default class LoginForm extends Component {
     return (
       <div>
         <Nav />
-        <div className='signup' style={{ backgroundImage: `url(${landing})` }}>
-        <img className="logo-white" src={logo} height='200px'/>
+        <div className='login' style={{ backgroundImage: `url(${landing})` }}>
+        <img className="logo-white-login" src={logo} height='200px'/>
         <div className='welcome'> <h1>Welcome Back Traveller!</h1></div>
         </div>
         <div className="form-container">
