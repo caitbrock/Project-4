@@ -64,6 +64,19 @@ export default function DeletableChips(props) {
     setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
   };
 
+  // const requestSearch = (searchedVal: label) => {
+  //   const filteredRows = originalRows.filter((row) => {
+  //     return row.name.toLowerCase().includes(searchedVal.toLowerCase());
+  //   });
+  //   setRows(filteredRows);
+  // };
+
+  // const cancelSearch = () => {
+  //   setSearched("");
+  //   requestSearch(searched);
+  // };
+
+
   const customTheme = createTheme({
     palette: {
       primary: {
@@ -106,8 +119,9 @@ MuiChip: {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Add new interest…"
               inputProps={{ 'aria-label': 'search' }}
+
             />
           </Search>
 

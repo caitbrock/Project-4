@@ -4,6 +4,7 @@ import landing from '../../LandingPage-SS.jpg';
 import logo from '../../Logo-white.png';
 import './LoginPage.css';
 
+
 export default class LoginForm extends Component {
   state = {
     email: '',
@@ -18,13 +19,14 @@ export default class LoginForm extends Component {
     });
   };
 
+
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
       const fetchResponse = await fetch('/api/users/login', {
-        method: 'POST',
+        method: 'GET',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({name: this.state.name, email: this.state.email, password: this.state.password,
+        body: JSON.stringify({email: this.state.email, password: this.state.password,
         }),
       });
 
@@ -47,19 +49,19 @@ export default class LoginForm extends Component {
         <div className='signup' style={{ backgroundImage: `url(${landing})` }}>
         <img className="logo-white" src={logo} height='200px'/>
         <div className='welcome'> <h1>Welcome Back Traveller!</h1></div>
-        <div className="form-container" onSubmit={this.handleSubmit}>
         </div>
-          <form autoComplete="off" >
+        <div className="form-container">
+          <form autoComplete="off" onSubmit={this.handleSubmit}>
             <div className='one'>
-            <div><label>Email</label><input type="text" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
-            <div><label>Password</label><input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
+            <div className='label'><label>Email</label><input type="text" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
+            <div className='label'><label>Password</label><input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
             <button className='submit'>
                 <span>
                   Login
                 </span>
             </button>
-            <p className="error-message">&nbsp;{this.state.error}</p>
             </div>
+            <p className="error-message">&nbsp;{this.state.error}</p>
           </form>
         </div>
         

@@ -29,7 +29,6 @@ const userSchema = new Schema(
     followers: Object,
     following: Object,
     contactInfo: String,
-    // profile_img: Image,
     Inspo_tags: Object,
     board: { type: Schema.Types.ObjectId, ref: "Board" },
   },

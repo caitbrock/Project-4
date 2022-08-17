@@ -9,7 +9,6 @@ import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import LocalAirportOutlinedIcon from '@mui/icons-material/LocalAirportOutlined';
 import React from 'react'
-import { InterestsOutlined } from '@mui/icons-material';
 
 export default class SignUpForm extends React.Component {
   state = {
@@ -98,7 +97,7 @@ export default class SignUpForm extends React.Component {
           </div>
 
           <div className='two'>
-            <div className='step-instructions'> <h2>2. Select your travel interests?</h2></div>
+            <div className='step-instructions'> <h2>2. Select some travel interests to <br /> get you started.</h2></div>
             <div className='traveltags'>
             <FormGroup>
             <FormControlLabel control={<Checkbox value="North America" onChange={this.handleSelect} />} label="North America" />
@@ -114,7 +113,7 @@ export default class SignUpForm extends React.Component {
           </div>
 
           <div className='three'>
-            <div className='step-instructions'> <h2>3. Get inspired and start planning your trip.</h2></div>
+            <div className='step-instructions'> <h2>3. Get inspired and start planning <br /> your trip.</h2></div>
             <button className='submit'disabled={disable}>
                 <span>
                   <LocalAirportOutlinedIcon />
