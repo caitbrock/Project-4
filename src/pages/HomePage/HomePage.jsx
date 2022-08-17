@@ -8,6 +8,7 @@ import Socket from "../../components/Socket/Socket";
 import SubNav from "../../components/SubNav/SubNav";
 import "./HomePage.css";
 
+
 class HomePage extends React.Component {
   state = {
     showLogin: true,
@@ -58,11 +59,9 @@ class HomePage extends React.Component {
           user={this.props.user}
           setUserInState={this.props.setUserInState}
         />
-          {/* <div className="header" style={{ backgroundImage: `url(${header})` }}>
-          <PageTitle /> */}
         <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
         {button}
-        {/* </div> */}
+        
       </main>
     );
   }
