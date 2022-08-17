@@ -104,3 +104,13 @@
     justify-content: space-evenly;
     background-image: url('https://www.worldatlas.com/r/w960-q80/upload/39/f1/6e/shutterstock-231369109.jpg');
   }
+
+  .header {
+    background-size: 100% auto;
+    background-size: cover;
+    z-index: -2;
+    background-repeat: no-repeat;
+    background-position: 50% 35%;
+    width: 100%;
+    height: 500px;
+}

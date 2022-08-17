@@ -34,6 +34,7 @@ class HomePage extends React.Component {
   render() {
     const travelComp = this.state.currentTab;
     let button;
+    
     if (travelComp == 1) {
       button = (
         <Feed
@@ -57,8 +58,11 @@ class HomePage extends React.Component {
           user={this.props.user}
           setUserInState={this.props.setUserInState}
         />
+          {/* <div className="header" style={{ backgroundImage: `url(${header})` }}>
+          <PageTitle /> */}
         <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
         {button}
+        {/* </div> */}
       </main>
     );
   }

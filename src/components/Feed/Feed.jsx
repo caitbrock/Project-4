@@ -14,17 +14,15 @@ class Feed extends React.Component {
 
   render() {
     return (
-      <div className="Feed">
-        <div className="header" style={{ backgroundImage: `url(${header})` }}>
-          <PageTitle />
-        </div>
+        <>
         <DeletableChips user={this.props.user} />
         <div className="inpsoimages">
           <Images />
           <Images />
           <Images />
         </div>
-      </div>
+      </>
+
     );
   }
 }
