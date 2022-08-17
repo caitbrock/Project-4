@@ -3,6 +3,12 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
+import Feed from "./components/Feed/Feed";
+import Inspo from "./components/Inspo/Inspo";
+import Nav from "./components/Nav/Nav";
+import CreatePost from "./components/CreatePost/CreatePost";
+import SubNav from "./components/SubNav/SubNav";
+import PageTitle from "./components/PageTitle/PageTitle";
 
 class App extends Component {
   state = {
@@ -48,8 +54,8 @@ class App extends Component {
       button = <Feed />;
     } else if (this.state.currentTab == 2) {
       button = <Inspo />;
-    } else {
-      button = <YourBoards />;
+      // } else {
+      //   button = <YourBoards />;
     }
 
     return (

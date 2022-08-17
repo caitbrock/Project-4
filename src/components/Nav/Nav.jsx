@@ -41,3 +41,5 @@ class Nav extends Component {
 // {this.state.showLogin ?
 //   <LoginForm setUserInState={this.props.setUserInState}/> :
 //   <SignUpForm setUserInState={this.props.setUserInState} />}
+
+export default Nav;

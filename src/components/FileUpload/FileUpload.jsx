@@ -1,38 +1,48 @@
 import React, { useState } from "react";
-import S3 from "react-aws-s3";
-
+import { uploadFile } from "react-s3";
+import "./FileUpload.css";
 // installed using npm install buffer --save
 window.Buffer = window.Buffer || require("buffer").Buffer;
 
 // a React functional component, used to create a simple upload input and button
+const config = {
+  bucketName: process.env.REACT_APP_BUCKET_NAME,
+  region: process.env.REACT_APP_REGION,
+  accessKeyId: process.env.REACT_APP_ACCESS,
+  secretAccessKey: process.env.REACT_APP_SECRET,
+};
 
 const FileUpload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   // the configuration information is fetched from the .env file
-  const config = {
-    bucketName: process.env.REACT_APP_BUCKET_NAME,
-    region: process.env.REACT_APP_REGION,
-    accessKeyId: process.env.REACT_APP_ACCESS,
-    secretAccessKey: process.env.REACT_APP_SECRET,
-  };
 
   const handleFileInput = (e) => {
     setSelectedFile(e.target.files[0]);
   };
 
-  const uploadFile = async (file) => {
-    const ReactS3Client = new S3(config);
-    // the name of the file uploaded is used to upload it to S3
-    ReactS3Client.uploadFile(file, file.name)
-      .then((data) => console.log(data.location))
+  const handleUploadFile = async (file) => {
+    uploadFile(file, config)
+      .then((data) => console.log(data))
       .catch((err) => console.error(err));
   };
   return (
-    <div>
-      <div>React S3 File Upload</div>
+    <div className="upload-container">
+      <div className="create-post-header">Create Post</div>
+      <br></br>
       <input type="file" onChange={handleFileInput} />
       <br></br>
-      <button onClick={() => uploadFile(selectedFile)}> Create Post </button>
+      <input
+        className="description-box"
+        type="text"
+        placeholder="Description"
+      />
+      <br></br>
+      <button
+        className="post-btn"
+        onClick={() => handleUploadFile(selectedFile)}
+      >
+        Upload
+      </button>
     </div>
   );
 };

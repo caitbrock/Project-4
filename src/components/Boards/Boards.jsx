@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Boards() {
-  return (
-    <div>Board
-</div>
-  )
+  return <div>Board</div>;
 }
 
-export default Boards
-
+export default Boards;
