@@ -1,5 +1,5 @@
 import React from "react";
-import './SubNav.css';
+import "./SubNav.css";
 
 function SubNav(props) {
   return (
@@ -18,7 +18,23 @@ function SubNav(props) {
           props.updateCurrentTabTo(3);
         }}
       >
-        Boards
+        Add Pci
+      </div>
+      <div
+        className="mainnav"
+        onClick={() => {
+          props.updateCurrentTabTo(4);
+        }}
+      >
+        Add Post
+      </div>
+      <div
+        className="mainnav"
+        onClick={() => {
+          props.updateCurrentTabTo(5);
+        }}
+      >
+        Chat
       </div>
     </div>
   );
