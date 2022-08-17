@@ -19,7 +19,7 @@ const userSchema = new Schema(
       minLength: 3,
       requred: true,
     },
-    // interests: {type: String, required: true },
+    interests: { type: Array, required: true},
     travelCollection: {
       Object,
     },

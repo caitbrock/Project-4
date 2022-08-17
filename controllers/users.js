@@ -10,13 +10,6 @@ module.exports = {
   verify,
 };
 
-function verify(req, res) {
-  if (req.user) {
-    res.status(200).json({ verified: true });
-    return;
-  }
-  res.status(200).json({ verified: false });
-}
 
 async function create(req, res) {
   console.log(req.body)
@@ -45,4 +38,12 @@ async function login(req, res) {
   } catch {
     res.status(400).json("Bad Credentials");
   }
+}
+
+function verify(req, res) {
+  if (req.user) {
+    res.status(200).json({ verified: true });
+    return;
+  }
+  res.status(200).json({ verified: false });
 }

@@ -2,15 +2,13 @@
     position: relative;
     background-size: 100% auto;
     background-size: cover;
-    z-index: -2;
     background-repeat: no-repeat;
-    background-position: 50% 80%;
     width: 100%;
 }
 
 .logo-white {
-    margin-top: 350px;
-    margin-bottom: 50px;
+    margin-top: 300px;
+    margin-bottom: 10px;
 }
 
 .form-container{
@@ -32,7 +30,6 @@ input[type=email]{
 }
 
 input[type=password]{
-
      border-radius: 20px;
      border: .5px solid #b8b8b8;
      color: #242424;
@@ -40,4 +37,32 @@ input[type=password]{
      height: 30px;
      padding-left: 10px;
      margin: 10px;
+}
+
+.submit{
+    justify-content: center;
+    align-items: center;
+    background-color: #D4A373;
+    border-radius: 20px;
+    border: 0;
+    color: #242424;
+    width: 250px;
+    height: 50px;
+    padding-left: 10px;
+    margin: 10px;
+    margin-bottom: 500px;
+}
+
+h1{
+    font-size: 60px;
+}
+
+.welcome {
+    position: relative;
+}
+
+.one {
+    display: inline-block;
+    width: auto;
+    text-align: right;
 }

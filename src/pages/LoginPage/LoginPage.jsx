@@ -2,6 +2,7 @@ import { Component } from 'react';
 import Nav from '../../components/Nav/Nav';
 import landing from '../../LandingPage-SS.jpg';
 import logo from '../../Logo-white.png';
+import './LoginPage.css';
 
 export default class LoginForm extends Component {
   state = {
@@ -46,15 +47,22 @@ export default class LoginForm extends Component {
         <Nav />
         <div className='signup' style={{ backgroundImage: `url(${landing})` }}>
         <img className="logo-white" src={logo} height='200px'/>
+        <div className='welcome'> <h1>Welcome Back Traveller!</h1></div>
         <div className="form-container" onSubmit={this.handleSubmit}>
         </div>
           <form autoComplete="off" >
+            <div className='one'>
             <div><label>Email</label><input type="text" name="email" value={this.state.email} onChange={this.handleChange} required /></div>
             <div><label>Password</label><input type="password" name="password" value={this.state.password} onChange={this.handleChange} required /></div>
-            <div><button type="submit">LOG IN</button></div>
+            <button className='submit'>
+                <span>
+                  Login
+                </span>
+            </button>
+            <p className="error-message">&nbsp;{this.state.error}</p>
+            </div>
           </form>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
         
       </div>
     );

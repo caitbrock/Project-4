@@ -14,11 +14,10 @@ function Nav(props) {
           <Logo />
         </div>
         <div className="right">
-        {props.showLogin ? 
-        <Profile showLogin={props.showLogin}/> :
-        <LoginButton showLogin={props.showLogin}/>
-        }
-          <UserLogOut user={props.user} setUserInState={props.setUserInState}/>
+          {props.user ? 
+            (<div className='info'><Profile user={props.user} setUserInState={props.setUserInState}/>
+            <UserLogOut user={props.user} setUserInState={props.setUserInState}/></div>) :
+              (<div><LoginButton /></div>)}
         </div>
       </div>
     );

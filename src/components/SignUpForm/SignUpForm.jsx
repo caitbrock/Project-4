@@ -6,17 +6,19 @@ import logo from '../../Logo-white.png';
 import ExpandCircleDownSharp from '@mui/icons-material/ExpandCircleDownSharp';
 import Checkbox from '@mui/material/Checkbox';
 import LocalAirportOutlinedIcon from '@mui/icons-material/LocalAirportOutlined';
+import React from 'react'
+import { setSelectionRange } from '@testing-library/user-event/dist/utils';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-export default class SignUpForm extends Component {
+export default class SignUpForm extends React.Component {
   state = {
     name: '',
     email: '',
     password: '',
     confirm: '',
     error: '',
-    // interests: ''
+    interests: [],
   };
 
   handleChange = (evt) => {
@@ -26,13 +28,17 @@ export default class SignUpForm extends Component {
     });
   };
 
+  handleSelect(e) {
+
+  }
+
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
       const fetchResponse = await fetch('/api/users/signup', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({name: this.state.name, email: this.state.email, password: this.state.password,
+        body: JSON.stringify({name: this.state.name, email: this.state.email, password: this.state.password, interests: this.state.interests
         }),
       });
 
@@ -64,12 +70,12 @@ export default class SignUpForm extends Component {
           <div className='box'>
             <div className='Number'>2</div>
             <div className='State'><h4>Choose Your Inspo</h4></div>
-            <div className='Instructions'><p>Select cities/countries/activies you are interested in.</p></div>
+            <div className='Instructions'><p>Select your travel interests</p></div>
           </div>
           <div className='box'>
             <div className='Number'>3</div>
             <div className='State'><h4>Start Your Planning</h4></div>
-            <div className='Instructions'><p>Click Submit and off you Go!</p></div>
+            <div className='Instructions'><p>Click submit and off you go</p></div>
           </div>
         </div>
       </div>
@@ -92,13 +98,15 @@ export default class SignUpForm extends Component {
           <div className='two'>
             <div className='step-instructions'> <h2>2. Select your travel interests?</h2></div>
             <div className='traveltags'>
-              <div>North America <Checkbox {...label} color="default" /></div>
-              <div> South America <Checkbox {...label} color="default" /></div>
-              <div> Asia <Checkbox {...label} color="default" /></div>
-              <div> Africa <Checkbox {...label} color="default" /></div>
-              <div> Europe <Checkbox {...label} color="default" /></div>
-              <div> Austrailia <Checkbox {...label} color="default" /></div>
-              <div> Antarctica <Checkbox {...label} color="default" /></div>
+            <label>North America</label><input type="checkbox" value='North America' onChange={this.handleSelect} />
+            <label>Asia</label><input type="checkbox" value='Asia' onChange={this.handleSelect} />
+              {/* <div>North America <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
+              <div> South America <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
+              <div> Asia <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
+              <div> Africa <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
+              <div> Europe <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
+              <div> Austrailia <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
+              <div> Antarctica <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div> */}
             </div>
           </div>
 

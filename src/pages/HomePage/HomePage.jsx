@@ -12,6 +12,7 @@ import './HomePage.css';
 
 class HomePage extends React.Component {
   state = { 
+    showLogin: true,
     currentTab: 1, 
     show: 1
   };
@@ -29,7 +30,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <main className="component">
-        <Nav user={this.props.user} setUserInState={this.props.setUserInState}/>
+        <Nav showLogin={this.state.showLogin} user={this.props.user} setUserInState={this.props.setUserInState}/>
         <SubNav />
         <PageTitle />
         <Feed />
