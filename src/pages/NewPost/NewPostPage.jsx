@@ -1,17 +1,17 @@
+import "./NewOrderPage.css";
 import React from "react";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 import FileUpload from "../FileUpload/FileUpload";
 import DraggableUploader from "../FileUpload/DraggableUploader";
 
-class CreatePost extends React.Component {
+class newPostPage extends React.Component {
   state = {
     Caption: "",
     Description: "",
     Destination: "",
   };
 
-  handlePost = async (e) => {
-    e.preventDefault();
+  handlePost = async () => {
     try {
       let jwt = localStorage.getItem("token");
       let fetchResponse = await fetch("/api/posts", {
@@ -38,7 +38,7 @@ class CreatePost extends React.Component {
     return (
       <div className="addpost">
         <FileUpload />
-        <form onSubmit={this.handlePost}>
+        <form action="/posts" method="POST">
           <label>
             Caption: <input type="text" name="Caption" />{" "}
           </label>
@@ -57,5 +57,3 @@ class CreatePost extends React.Component {
     );
   }
 }
-
-export default CreatePost;
