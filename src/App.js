@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 
 class App extends Component {
   state = {
@@ -44,53 +45,19 @@ class App extends Component {
     }
   }
 
-  render() {
-    const travelComp = this.state.currentTab;
-    let button;
-    if (travelComp == 1) {
-      button = <Feed />;
-    } else if (this.state.currentTab == 2) {
-      button = <Inspo />;
-    } else {
-      button = <YourBoards />;
-    }
-
-    return (
-      <>
-        <div className="App">
-          <Routes>
-            {this.state.user ? (
-              <Route
-                path="/home"
-                element={
-                  <HomePage
-                    user={this.state.user}
-                    setUserInState={this.setUserInState}
-                  />
-                }
-              />
-            ) : (
-              <Route
-                path="/login"
-                element={<AuthPage setUserInState={this.setUserInState} />}
-              />
-            )}
-            ;
-          </Routes>
-        </div>
-        <div className="component">
-          App
-          <nav className="component">
-            <Nav />
-            <PageTitle />
-          </nav>
-          <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
-          {button}
-          <CreatePost />
-        </div>
-      </>
-    );
-  }
+render() {
+  return (
+      <div className="App">
+        {this.state.user ? (
+            <HomePage user={this.state.user} setUserInState={this.setUserInState}/>
+      ) : (
+        <Routes>
+          <Route path="/" element={<AuthPage user={this.state.user} setUserInState={this.setUserInState} />} />
+          <Route path='/login'element={<LoginPage />} />
+        </Routes>)}
+      </div>
+  );
+}
 }
 
 export default App;

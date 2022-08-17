@@ -1,5 +1,5 @@
 import React from "react";
-import './SubNav.css';
+import "./SubNav.css";
 
 function SubNav(props) {
   return (
