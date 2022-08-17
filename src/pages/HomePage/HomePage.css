@@ -98,9 +98,3 @@
     width: 30vw;
   }
   
-  .feed{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-image: url('https://www.worldatlas.com/r/w960-q80/upload/39/f1/6e/shutterstock-231369109.jpg');
-  }
