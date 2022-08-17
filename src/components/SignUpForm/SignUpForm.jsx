@@ -5,11 +5,11 @@ import './SignUpForm.css';
 import logo from '../../Logo-white.png';
 import ExpandCircleDownSharp from '@mui/icons-material/ExpandCircleDownSharp';
 import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import LocalAirportOutlinedIcon from '@mui/icons-material/LocalAirportOutlined';
 import React from 'react'
-import { setSelectionRange } from '@testing-library/user-event/dist/utils';
-
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+import { InterestsOutlined } from '@mui/icons-material';
 
 export default class SignUpForm extends React.Component {
   state = {
@@ -28,9 +28,11 @@ export default class SignUpForm extends React.Component {
     });
   };
 
-  handleSelect(e) {
-
-  }
+  handleSelect = (evt) => {
+      // this.setState(state => ({
+      //   interests: [...state.interests, interests]
+      // }));
+    }
 
   handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -98,15 +100,16 @@ export default class SignUpForm extends React.Component {
           <div className='two'>
             <div className='step-instructions'> <h2>2. Select your travel interests?</h2></div>
             <div className='traveltags'>
-            <label>North America</label><input type="checkbox" value='North America' onChange={this.handleSelect} />
-            <label>Asia</label><input type="checkbox" value='Asia' onChange={this.handleSelect} />
-              {/* <div>North America <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
-              <div> South America <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
-              <div> Asia <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
-              <div> Africa <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
-              <div> Europe <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
-              <div> Austrailia <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div>
-              <div> Antarctica <Checkbox {...label} color="default" value={this.state.interests} onChange={this.handleSelect} data-category="Continent"/></div> */}
+            <FormGroup>
+            <FormControlLabel control={<Checkbox value="North America" onChange={this.handleSelect} />} label="North America" />
+            <FormControlLabel control={<Checkbox value="South America" onChange={this.handleSelect} />} label="South America" />
+            <FormControlLabel control={<Checkbox value="Asia" onChange={this.handleSelect} />} label="Asia" />
+            <FormControlLabel control={<Checkbox value="Africa" onChange={this.handleSelect} />} label="Africa" />
+            <FormControlLabel control={<Checkbox value="Austrailia" onChange={this.handleSelect} />} label="Australia" />
+            <FormControlLabel control={<Checkbox value="Antarctica" onChange={this.handleSelect} />} label="Antactica" />
+            <FormControlLabel control={<Checkbox value="Europe" onChange={this.handleSelect} />} label="Europe" />
+            </FormGroup>
+
             </div>
           </div>
 

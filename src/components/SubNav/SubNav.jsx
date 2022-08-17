@@ -1,16 +1,9 @@
 import React from "react";
+import './SubNav.css';
 
 function SubNav(props) {
   return (
     <div className="subnav">
-      <div
-        className="mainnav"
-        onClick={() => {
-          props.updateCurrentTabTo(1);
-        }}
-      >
-        Feed
-      </div>
       <div
         className="mainnav"
         onClick={() => {

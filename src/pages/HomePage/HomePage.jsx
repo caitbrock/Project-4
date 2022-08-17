@@ -31,12 +31,7 @@ class HomePage extends React.Component {
     return (
       <main className="component">
         <Nav showLogin={this.state.showLogin} user={this.props.user} setUserInState={this.props.setUserInState}/>
-        <SubNav />
-        <PageTitle />
         <Feed />
-        <InstaImages />
-        <TicTocImages/>
-        <YourBoards />
       </main>
     );
   }
