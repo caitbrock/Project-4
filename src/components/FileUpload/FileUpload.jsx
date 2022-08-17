@@ -1,41 +1,59 @@
 import React, { useState } from "react";
-import { uploadFile } from "react-s3";
+import AWS from "aws-sdk";
 import "./FileUpload.css";
-// installed using npm install buffer --save
-window.Buffer = window.Buffer || require("buffer").Buffer;
+import { render } from "@testing-library/react";
+const S3_BUCKET = process.env.REACT_APP_BUCKET_NAME;
+const REGION = process.env.REACT_APP_REGION;
 
-// a React functional component, used to create a simple upload input and button
-const config = {
-  bucketName: process.env.REACT_APP_BUCKET_NAME,
-  region: process.env.REACT_APP_REGION,
+AWS.config.update({
   accessKeyId: process.env.REACT_APP_ACCESS,
   secretAccessKey: process.env.REACT_APP_SECRET,
-};
+});
 
-const FileUpload = () => {
+const myBucket = new AWS.S3({
+  params: { Bucket: S3_BUCKET },
+  region: REGION,
+});
+
+const UploadImageToS3WithNativeSdk = () => {
+  const [progress, setProgress] = useState(0);
   const [selectedFile, setSelectedFile] = useState(null);
-  // the configuration information is fetched from the .env file
 
   const handleFileInput = (e) => {
     setSelectedFile(e.target.files[0]);
   };
 
-  const handleUploadFile = async (file) => {
-    uploadFile(file, config)
-      .then((data) => console.log(data))
-      .catch((err) => console.error(err));
+  const handleUploadFile = (file) => {
+    const params = {
+      ACL: "public-read",
+      Body: file,
+      Bucket: S3_BUCKET,
+      Key: file.name,
+    };
+
+    myBucket
+      .putObject(params)
+      .on("httpUploadProgress", (evt) => {
+        setProgress(Math.round((evt.loaded / evt.total) * 100));
+      })
+      .send((err) => {
+        if (err) console.log(err);
+      });
   };
+
   return (
     <div className="upload-container">
       <div className="create-post-header">Create Post</div>
       <br></br>
-      <input type="file" onChange={handleFileInput} />
-      <br></br>
       <input
-        className="description-box"
-        type="text"
-        placeholder="Description"
+        className="choose-file"
+        type="file"
+        multiple="true"
+        onChange={handleFileInput}
+        accept=".png,.jpg,.jpeg,.wmv,.avi"
       />
+      <br></br>
+      <div>Uploading... {progress}%</div>
       <br></br>
       <button
         className="post-btn"
@@ -47,4 +65,4 @@ const FileUpload = () => {
   );
 };
 
-export default FileUpload;
+export default UploadImageToS3WithNativeSdk;
