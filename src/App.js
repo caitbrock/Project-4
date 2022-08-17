@@ -45,19 +45,31 @@ class App extends Component {
     }
   }
 
-render() {
-  return (
+  render() {
+    return (
       <div className="App">
         {this.state.user ? (
-            <HomePage user={this.state.user} setUserInState={this.setUserInState}/>
-      ) : (
-        <Routes>
-          <Route path="/" element={<AuthPage user={this.state.user} setUserInState={this.setUserInState} />} />
-          <Route path='/login'element={<LoginPage />} />
-        </Routes>)}
+          <HomePage
+            user={this.state.user}
+            setUserInState={this.setUserInState}
+          />
+        ) : (
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <AuthPage
+                  user={this.state.user}
+                  setUserInState={this.setUserInState}
+                />
+              }
+            />
+            <Route path="/login" element={<LoginPage />} />
+          </Routes>
+        )}
       </div>
-  );
-}
+    );
+  }
 }
 
 export default App;
