@@ -53,7 +53,7 @@ class HomePage extends React.Component {
       button = <Socket />;
     }
     return (
-      <main className="component">
+      <div className="component">
         <Nav
           showLogin={this.state.showLogin}
           user={this.props.user}
@@ -62,7 +62,7 @@ class HomePage extends React.Component {
         <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
         {button}
         
-      </main>
+      </div>
     );
   }
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import header from "../../Header-IM.jpg";
 import PageTitle from "../../components/PageTitle/PageTitle";
-import Images from "../Images/Images";
 import DeletableChips from "../DeletableChips/DeletableChips";
+import Images from "../Images/Images";
+
 
 class Feed extends React.Component {
   state = {
@@ -17,10 +18,10 @@ class Feed extends React.Component {
         <PageTitle />
         </div>
         <DeletableChips user={this.props.user} />
-        <div className="inpsoimages">
-          <Images />
-          <Images />
-          <Images />
+        <div className='inspoimages' style={{display: 'flex', justifyContent: 'center'}}>
+        <Images />
+        <Images />
+        <Images />
         </div>
       </>
 

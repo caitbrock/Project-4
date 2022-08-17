@@ -1,17 +1,15 @@
-import React from "react";
+import React from 'react'
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import Chip from "@mui/material/Chip";
-import "./Images.css";
 
 
 function Images() {
   return (
-    <div className='images'>
-        <Card className="imagecard">
+          <Card className="imagecard" style={{margin: '20px'}}>
           <CardActionArea>
             <CardMedia component="img" height="140" image="" alt="Random Image" />
             <CardContent>
@@ -27,7 +25,6 @@ function Images() {
             </CardContent>
           </CardActionArea>
         </Card>
-        </div>
   )
 }
 
