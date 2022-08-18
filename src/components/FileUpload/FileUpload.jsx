@@ -30,8 +30,7 @@ const UploadImageToS3WithNativeSdk = () => {
       Bucket: S3_BUCKET,
       Key: file.name,
     };
-    console.log(params.Key);
-
+    //construct url string to match the aws url, use file.name
     myBucket
       .putObject(params, function (err, data) {
         console.log(data);
