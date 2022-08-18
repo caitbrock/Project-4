@@ -4,7 +4,9 @@ import openSocket from "socket.io-client";
 import header  from "../../Header-IM.jpg";
 import ForumIcon from '@mui/icons-material/Forum';
 
-const socket = openSocket("http://localhost:8080");
+// const socket = openSocket("http://localhost:8080");
+import { io } from "socket.io-client";
+const socket = io();
 
 function App() {
   const [message, setMessage] = useState("");
