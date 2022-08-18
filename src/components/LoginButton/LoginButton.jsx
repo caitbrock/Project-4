@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LoginForm from '../../pages/LoginPage/LoginPage';
 
-function LoginButton() {
+
+export default class LoginButton extends React.Component {
+
+  render(){
   return (
     <div>
     <Link to='/login'>
@@ -12,5 +14,5 @@ function LoginButton() {
     </div>
   )
 }
+}
 
-export default LoginButton

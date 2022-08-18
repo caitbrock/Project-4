@@ -30,6 +30,7 @@ class HomePage extends React.Component {
         <Feed
           user={this.props.user}
           setUserInState={this.props.setUserInState}
+          updateInterest={this.props.updateInterest}
         />
       );
     } else if (this.state.currentTab == 2) {

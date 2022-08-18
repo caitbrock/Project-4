@@ -13,7 +13,7 @@ class Feed extends React.Component {
     return (
         <>
         <div className="header " style={{ backgroundImage: `url(${header})` }}></div>
-        <DeletableChips user={this.props.user} />
+        <DeletableChips user={this.props.user} updateInterest={this.props.updateInterest}/>
         <div className='FeedImages' style={{display: 'flex', justifyContent: 'center'}}>
         <Images />
         <Images />

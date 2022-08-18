@@ -12,7 +12,7 @@ function Nav(props) {
   return (
     <div className="nav">
       <div className="left">
-        <Logo />
+      <div className='clickablelogo' onClick={() => {props.updateCurrentTabTo(1)}}><Logo /></div>
       </div>
       <div className="right">
         {props.user ? (
@@ -20,6 +20,7 @@ function Nav(props) {
             <div className='icon' style={{backgroundColor: '#cdcf6f'}} onClick={() => {props.updateCurrentTabTo(3)}}><AddAPhotoOutlinedIcon style={{margin: '13px'}}/></div>
             <div className='icon' onClick={() => {props.updateCurrentTabTo(4)}}><ChatOutlinedIcon style={{ margin: '13px'}}/></div>
             <Profile user={props.user} setUserInState={props.setUserInState} onClick={() => {props.updateCurrentTabTo(5)}}/>
+            
             <UserLogOut
               user={props.user}
               setUserInState={props.setUserInState}
