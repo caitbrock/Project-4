@@ -17,6 +17,7 @@ margin-top: 200px;
     background-size: 100% auto;
     z-index: -2;
     background-repeat: no-repeat;
+
 }
 
 input[type=email]{
@@ -39,7 +40,7 @@ input[type=password]{
      margin: 10px;
 }
 
-.submit{
+.submitlogin{
     justify-content: center;
     align-items: center;
     background-color: #D4A373;
@@ -61,7 +62,7 @@ h1{
     position: relative;
 }
 
-.one {
+.one{
     display: inline-block;
     width: auto;
     text-align: right;

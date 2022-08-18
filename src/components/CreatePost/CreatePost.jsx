@@ -1,6 +1,10 @@
 import React from "react";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import FileUpload from "../FileUpload/FileUpload";
+import header  from "../../Header-IM.jpg";
+import PublicRoundedIcon from '@mui/icons-material/PublicRounded';
+import "./CreatePost.css";
+
 
 class CreatePost extends React.Component {
   state = {
@@ -42,11 +46,14 @@ class CreatePost extends React.Component {
 
   render() {
     return (
+      <>
+      <div className="header " style={{ backgroundImage: `url(${header})`}}></div>
       <div className="addpost">
         <FileUpload />
+        <div className='uploadform'>
         <form onSubmit={this.handlePost}>
           <label>
-            Caption:
+            Title:
             <input
               type="text"
               name="title"
@@ -55,7 +62,6 @@ class CreatePost extends React.Component {
               required
             />
           </label>
-          <br />
           <label>
             Description:
             <input
@@ -66,9 +72,8 @@ class CreatePost extends React.Component {
               required
             />
           </label>
-          <br />
           <label>
-            Destination:
+            Location:
             <input
               type="text"
               name="destination"
@@ -77,13 +82,15 @@ class CreatePost extends React.Component {
               required
             />
           </label>
-          <button className="submit">
+          <button className="submit">Inspire Others
             <span>
-              <AddPhotoAlternateIcon />
+              <PublicRoundedIcon />
             </span>
           </button>
         </form>
       </div>
+      </div>
+      </>
     );
   }
 }
