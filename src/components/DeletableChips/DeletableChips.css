@@ -1,0 +1,19 @@
+button {
+    justify-content: center;
+    align-items: center;
+    background-color: #D4A373;
+    border-radius: 20px;
+    border: 0;
+    color: #242424;
+    height: 30px;
+    margin: 10px; 
+}
+
+span {
+    margin-left: 10px;
+  }
+
+  .interestform{
+    display: flex;
+    flex-direction: row;
+  }

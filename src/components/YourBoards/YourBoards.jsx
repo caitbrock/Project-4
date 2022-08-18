@@ -1,68 +1,31 @@
-import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import React from "react";
+import header from "../../Header-IM.jpg";
+import PageTitle from "../../components/PageTitle/PageTitle";
+import DeletableChips from "../DeletableChips/DeletableChips";
+import Images from "../Images/Images";
 
-export default function ActionAreaCard() {
-  return (
-    <div className='yourboard'>
-    <Card className="Boards">
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="India"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-          Board #1
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-          Info about where/when/why this location/board has been created
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-   <Card className="Boards">
-   <CardActionArea>
-     <CardMedia
-       component="img"
-       height="140"
-       image=""
-       alt="Camping"
-     />
-     <CardContent>
-       <Typography gutterBottom variant="h5" component="div">
-         Board #2
-       </Typography>
-       <Typography variant="body2" color="text.secondary">
-       Info about where/when/why this location/board has been created
-       </Typography>
-     </CardContent>
-   </CardActionArea>
- </Card>
- <Card className="Boards">
-   <CardActionArea>
-     <CardMedia
-       component="img"
-       height="140"
-       image=""
-       alt="Hikes"
-     />
-     <CardContent>
-       <Typography gutterBottom variant="h5" component="div">
-       Board #3
-       </Typography>
-       <Typography variant="body2" color="text.secondary">
-         Info about where/when/why this location/board has been created
-       </Typography>
-     </CardContent>
-   </CardActionArea>
- </Card>
 
-</div>
-  );
+class Feed extends React.Component {
+  state = {
+    user: null,
+    currentTab: 2,
+  };
+
+  render() {
+    return (
+        <>
+        <div className="header" style={{ backgroundImage: `url(${header})` }}>
+        
+        </div>
+        <DeletableChips user={this.props.user} />
+        <div className='inspoimages' style={{display: 'flex', justifyContent: 'center'}}>
+        <Images />
+        <Images />
+        <Images />
+        </div>
+      </>
+
+    );
+  }
 }
+export default Feed;

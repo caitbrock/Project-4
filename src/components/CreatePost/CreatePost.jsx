@@ -1,6 +1,9 @@
 import React from "react";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import FileUpload from "../FileUpload/FileUpload";
+import header from "../../Header-IM.jpg";
+import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
+import "./CreatePost.css";
 
 class CreatePost extends React.Component {
   state = {
@@ -42,48 +45,55 @@ class CreatePost extends React.Component {
 
   render() {
     return (
-      <div className="addpost">
-        <FileUpload />
-        <form onSubmit={this.handlePost}>
-          <label>
-            Caption:
-            <input
-              type="text"
-              name="title"
-              value={this.state.title}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Description:
-            <input
-              type="text"
-              name="description"
-              value={this.state.description}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-          <br />
-          <label>
-            Destination:
-            <input
-              type="text"
-              name="destination"
-              value={this.state.destination}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-          <button className="submit">
-            <span>
-              <AddPhotoAlternateIcon />
-            </span>
-          </button>
-        </form>
-      </div>
+      <>
+        <div
+          className="bannerheader"
+          style={{ backgroundImage: `url(${header})` }}
+        ></div>
+        <div className="addpost">
+          <FileUpload />
+          <div className="uploadform">
+            <form onSubmit={this.handlePost}>
+              <label>
+                Title:
+                <input
+                  type="text"
+                  name="title"
+                  value={this.state.title}
+                  onChange={this.handleChange}
+                  required
+                />
+              </label>
+              <label>
+                Description:
+                <input
+                  type="text"
+                  name="description"
+                  value={this.state.description}
+                  onChange={this.handleChange}
+                  required
+                />
+              </label>
+              <label>
+                Location:
+                <input
+                  type="text"
+                  name="destination"
+                  value={this.state.destination}
+                  onChange={this.handleChange}
+                  required
+                />
+              </label>
+              <button className="submit">
+                Inspire Others
+                <span>
+                  <PublicRoundedIcon />
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </>
     );
   }
 }

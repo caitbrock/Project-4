@@ -1,11 +1,12 @@
 .mainnav{
-    justify-content: center;
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #ffffff;
     border-radius: 20px;
     border: 0;
     color: #242424;
-    width: 15vw;
+    width: 150px;
     max-width: 150px;
     padding: 10px;
     margin: 10px;
@@ -15,8 +16,19 @@
     background-color: #CCD5AE
 }
 
-.subnav{
-    position: relative;
-    top: 25%;
-    gap:50px;
+.mainnav:focus{
+    background-color: #CCD5AE
 }
+
+.subnav{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+    gap:50px;
+    width: 100%;
+    height: px;
+}
+
+  
