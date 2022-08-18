@@ -6,7 +6,9 @@ import CreatePost from "../../components/CreatePost/CreatePost.jsx";
 import Inspo from "../../components/Inspo/Inspo";
 import Socket from "../../components/Socket/Socket";
 import SubNav from "../../components/SubNav/SubNav";
+import Profile from '../../components/Profile/Profile';
 import "./HomePage.css";
+
 
 class HomePage extends React.Component {
   state = {
@@ -19,18 +21,6 @@ class HomePage extends React.Component {
     this.setState({ currentTab: tab });
   };
 
-  async componentDidMount() {
-    try {
-      let jwt = localStorage.getItem("token");
-      let fetchOrdersResponse = await fetch("/api/orders", {
-        headers: { Authorization: "Bearer " + jwt },
-      });
-      let orders = await fetchOrdersResponse.json();
-      this.setState({ orderHistory: orders });
-    } catch (err) {
-      console.error("ERROR:", err);
-    }
-  }
   render() {
     const travelComp = this.state.currentTab;
     let button;
@@ -40,30 +30,24 @@ class HomePage extends React.Component {
         <Feed
           user={this.props.user}
           setUserInState={this.props.setUserInState}
+          updateInterest={this.props.updateInterest}
         />
       );
     } else if (this.state.currentTab == 2) {
-      button = <Inspo />;
+      button = <Inspo user={this.props.user}
+      setUserInState={this.props.setUserInState}/>;
     } else if (this.state.currentTab == 3) {
-      button = <YourBoards />;
+      button = <CreatePost user={this.props.user}/>;
     } else if (this.state.currentTab == 4) {
-      button = <CreatePost />;
-    } else {
-      button = <Socket />;
-    }
+      button = <Socket user={this.props.user}/>;
+    } else {button = <Profile user={this.props.user}/>;}
     return (
-      <main className="component">
-        <Nav
-          showLogin={this.state.showLogin}
-          user={this.props.user}
-          setUserInState={this.props.setUserInState}
-        />
-          {/* <div className="header" style={{ backgroundImage: `url(${header})` }}>
-          <PageTitle /> */}
+      <div className="component">
+        <Nav showLogin={this.state.showLogin} user={this.props.user} setUserInState={this.props.setUserInState} updateCurrentTabTo={this.updateCurrentTabTo}/>
         <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
         {button}
-        {/* </div> */}
-      </main>
+        
+      </div>
     );
   }
 }

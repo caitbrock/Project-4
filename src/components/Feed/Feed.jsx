@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Images from "../Images/Images";
+import header from "../../Header-IM.jpg";
 import DeletableChips from "../DeletableChips/DeletableChips";
 
 function Feed(props) {
@@ -21,9 +22,16 @@ function Feed(props) {
 
   return (
     <>
+      <div
+        className="header "
+        style={{ backgroundImage: `url(${header})` }}
+      ></div>
       <DeletableChips user={props.user} />
       {posts ? (
-        <div className="inpsoimages">
+        <div
+          className="FeedImages"
+          style={{ display: "flex", justifyContent: "center" }}
+        >
           {posts.map((c) => (
             <Images title={c.title} destination={c.destination} />
           ))}

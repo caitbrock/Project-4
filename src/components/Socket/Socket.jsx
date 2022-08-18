@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "../Socket/Socket.css";
 import openSocket from "socket.io-client";
+import header  from "../../Header-IM.jpg";
+import ForumIcon from '@mui/icons-material/Forum';
 
 const socket = openSocket("http://localhost:8080");
 
@@ -34,13 +36,13 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <h1>Chat App</h1>
+    <div className="Chat">
+              <div className="header" style={{ backgroundImage: `url(${header})` }}></div>
       <div className="chatbox">
         {chat.length > 0 ? (
           chat.map((msg, idx) => <li key={`${idx}-${msg}`}>{msg}</li>)
         ) : (
-          <span>"Nothing in chat"</span>
+          <span>"Start a conversation ..."</span>
         )}
       </div>
       <form onSubmit={handleSubmit}>
@@ -50,7 +52,12 @@ function App() {
           onChange={handleChange}
           value={message}
         />
-        <input type="submit" value="Send" />
+                    <button className='submit'>Submit
+                <span>
+                  <ForumIcon />
+                </span>
+            </button>
+        
       </form>
     </div>
   );

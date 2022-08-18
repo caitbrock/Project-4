@@ -3,7 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
+import Login from './components/Login/Login';
 
 class App extends Component {
   state = {
@@ -15,6 +15,15 @@ class App extends Component {
     console.log(this.state.currentTab);
     this.setState({ user: incomingUserData });
   };
+
+  updateInterest = (evt, newInterest) => {
+    // evt.preventDefault();
+     this.setState(state => ({
+     user: {...this.state.user, interests: [...this.state.user.interests, newInterest]}
+      
+      }));
+      console.log(newInterest)
+    }
 
   updateCurrentTabTo = (tab) => {
     this.setState({ currentTab: tab });
@@ -52,6 +61,7 @@ class App extends Component {
           <HomePage
             user={this.state.user}
             setUserInState={this.setUserInState}
+            updateInterest={this.updateInterest}
           />
         ) : (
           <Routes>
@@ -64,7 +74,7 @@ class App extends Component {
                 />
               }
             />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         )}
       </div>
