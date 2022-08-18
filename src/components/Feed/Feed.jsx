@@ -7,18 +7,30 @@ function Feed(props) {
 
   useEffect(() => {
     async function fetchData() {
-      let data = await fetch("/api/posts");
-      let postData = await data.json();
-      setPosts(postData);
-      console.log(posts);
+      let data = await fetch("/api/posts")
+        .then((response) => response.json())
+        .then((posts) => {
+          setPosts(posts);
+          // const postsList = post.map((post) => post.title, post.destination);
+        });
     }
     fetchData();
   }, []);
 
+  console.log(posts);
+
   return (
     <>
       <DeletableChips user={props.user} />
-      <div className="inpsoimages"></div>
+      {posts ? (
+        <div className="inpsoimages">
+          {posts.map((c) => (
+            <Images title={c.title} destination={c.destination} />
+          ))}
+        </div>
+      ) : (
+        false
+      )}
     </>
   );
 }
