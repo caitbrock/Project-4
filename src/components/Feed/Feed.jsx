@@ -18,11 +18,7 @@ function Feed(props) {
   return (
     <>
       <DeletableChips user={props.user} />
-      <div className="inpsoimages">
-        {posts.map((c) => (
-          <Images title={c.title} destination={c.destination} />
-        ))}
-      </div>
+      <div className="inpsoimages"></div>
     </>
   );
 }
@@ -49,3 +45,7 @@ export default Feed;
 // <Images />
 // <Images />
 // <Images />
+
+// {posts.map((c) => (
+//   <Images title={c.title} destination={c.destination} />
+// ))}
