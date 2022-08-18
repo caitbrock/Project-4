@@ -8,6 +8,7 @@ import Chip from "@mui/material/Chip";
 
 function Images(props) {
   return (
+    <div>
     <Card className="imagecard" style={{ margin: "20px" }}>
       <CardActionArea>
         <CardMedia component="img" height="140" image="" alt="Random Image" />
@@ -24,6 +25,7 @@ function Images(props) {
         </CardContent>
       </CardActionArea>
     </Card>
+    </div>
   );
 }
 
