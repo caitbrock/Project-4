@@ -1,5 +1,4 @@
 import React from "react";
-import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import FileUpload from "../FileUpload/FileUpload";
 import header from "../../Header-IM.jpg";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
@@ -51,9 +50,12 @@ class CreatePost extends React.Component {
           style={{ backgroundImage: `url(${header})` }}
         ></div>
         <div className="addpost">
-          <FileUpload />
           <div className="uploadform">
             <form onSubmit={this.handlePost}>
+            <label>
+                Title:
+                <input type="file" class="form-control-file" name="file" />
+                </label>
               <label>
                 Title:
                 <input

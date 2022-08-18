@@ -32,7 +32,6 @@ setNewInterest(evt.target.value)}
     );
   };
 
-
   const customTheme = createTheme({
     palette: {
       primary: {
@@ -83,8 +82,6 @@ setNewInterest(evt.target.value)}
 
           return (
             <>
-
-         
             <ListItem key={data.key}>
               <Chip
                 color="secondary"
