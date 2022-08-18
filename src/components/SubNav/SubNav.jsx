@@ -26,7 +26,7 @@ function SubNav(props) {
           props.updateCurrentTabTo(3);
         }}
       >
-        Add Pci
+        Boards
       </div>
       <div
         className="mainnav"

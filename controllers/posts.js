@@ -2,16 +2,8 @@ const User = require("../models/user");
 const Post = require("../models/posts");
 
 async function index(req, res) {
-  try {
-    // 1. grab all items from DB, sorted by date descending (being fancy!)
-    let posts = await Post.find({ user: req.user._id })
-      .sort({ createdAt: "desc" })
-      .exec();
-    // 2. send to frontend
-    res.status(200).json(posts);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+  let posts = await Post.find({}).sort({ createdAt: "desc" });
+  res.status(200).json(posts);
 }
 
 async function create(req, res) {

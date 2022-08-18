@@ -1,6 +1,7 @@
 import React from "react";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import FileUpload from "../FileUpload/FileUpload";
+//const axios = require("axios").default;
 
 class CreatePost extends React.Component {
   state = {

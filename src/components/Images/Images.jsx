@@ -7,28 +7,27 @@ import { CardActionArea } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import "./Images.css";
 
-
-function Images() {
+function Images(props) {
   return (
-    <div className='images'>
-        <Card className="imagecard">
-          <CardActionArea>
-            <CardMedia component="img" height="140" image="" alt="Random Image" />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Title
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Short description of image
-              </Typography>
+    <div className="images">
+      <Card className="imagecard">
+        <CardActionArea>
+          <CardMedia component="img" height="140" image="" alt="Random Image" />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {props.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {props.destination}
+            </Typography>
             <Chip label="#Tag1" variant="outlined" />
             <Chip label="#Tag2" variant="outlined" />
             <Chip label="#Tag3" variant="outlined" />
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        </div>
-  )
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </div>
+  );
 }
 
-export default Images
+export default Images;
