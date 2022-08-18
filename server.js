@@ -2,6 +2,10 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
+const { S3Client } = require("@aws-sdk/client-s3");
+const multer = require("multer");
+const multerS3 = require("multer-s3");
+const AWS = require("aws-sdk");
 
 require("dotenv").config();
 require("./config/database.js");
@@ -42,4 +46,31 @@ io.on("connection", (socket) => {
   socket.on("post", (data) => {
     socket.broadcast.emit("newPost", data);
   });
+});
+
+//AWS Upload//
+
+const s3 = new S3Client({
+  accessKeyId: process.env.REACT_APP_ACCESS,
+  secretAccessKey: process.env.REACT_APP_SECRET,
+  region: "ca-central-1",
+});
+
+const upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: process.env.REACT_APP_BUCKET_NAME,
+    acl: "public-read",
+    metadata: function (req, file, cb) {
+      cb(null, { fieldName: file.fieldname });
+    },
+    key: function (req, file, cb) {
+      cb(null, Date.now().toString());
+    },
+  }),
+});
+
+app.post("/", upload.single("file"), function (req, res, next) {
+  console.log("Uploaded!!!");
+  res.redirect("/");
 });
