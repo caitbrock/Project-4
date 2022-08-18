@@ -26,7 +26,8 @@ function Feed(props) {
         className="bannerheader"
         style={{ backgroundImage: `url(${header})` }}
       ></div>
-      <DeletableChips user={props.user} />
+      <DeletableChips user={props.user} updateInterest={props.updateInterest} />
+      
       {posts ? (
         <div
           className="FeedImages"
@@ -39,6 +40,7 @@ function Feed(props) {
       ) : (
         false
       )}
+      
     </>
   );
 }

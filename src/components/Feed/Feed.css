@@ -16,3 +16,10 @@
     align-items: center;
     margin: 20px;
 }
+
+.FeedImages{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+
+}

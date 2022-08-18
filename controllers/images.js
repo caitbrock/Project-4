@@ -1,6 +1,5 @@
 const aws = require("aws-sdk");
 const config = require("./config.json");
-
 // async function () {
 //     try{
 //         aws.config.setPromisesDependency();
