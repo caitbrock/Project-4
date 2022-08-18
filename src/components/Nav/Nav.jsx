@@ -4,6 +4,9 @@ import UserLogOut from "../UserLogOut/UserLogOut";
 import Logo from "../Logo/Logo";
 import LoginButton from "../LoginButton/LoginButton";
 import "./Nav.css";
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
+import AddAPhotoOutlinedIcon from '@mui/icons-material/AddAPhotoOutlined';
+import { NavLink } from "react-router-dom";
 
 function Nav(props) {
   return (
@@ -14,7 +17,9 @@ function Nav(props) {
       <div className="right">
         {props.user ? (
           <div className="info">
-            <Profile user={props.user} setUserInState={props.setUserInState} />
+            <div className='icon' style={{backgroundColor: '#cdcf6f'}} onClick={() => {props.updateCurrentTabTo(3)}}><AddAPhotoOutlinedIcon style={{margin: '13px'}}/></div>
+            <div className='icon' onClick={() => {props.updateCurrentTabTo(4)}}><ChatOutlinedIcon style={{ margin: '13px'}}/></div>
+            <Profile user={props.user} setUserInState={props.setUserInState} onClick={() => {props.updateCurrentTabTo(5)}}/>
             <UserLogOut
               user={props.user}
               setUserInState={props.setUserInState}

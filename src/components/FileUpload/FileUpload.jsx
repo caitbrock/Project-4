@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import AWS from "aws-sdk";
 import "./FileUpload.css";
 import { render } from "@testing-library/react";
+import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
+
 const S3_BUCKET = process.env.REACT_APP_BUCKET_NAME;
 const REGION = process.env.REACT_APP_REGION;
+
 
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_ACCESS,
@@ -43,23 +46,23 @@ const UploadImageToS3WithNativeSdk = () => {
 
   return (
     <div className="upload-container">
-      <div className="create-post-header">Create Post</div>
-      <br></br>
       <input
+        style={{display: "none"}}
         className="choose-file"
         type="file"
         multiple="true"
         onChange={handleFileInput}
         accept=".png,.jpg,.jpeg,.wmv,.avi"
       />
-      <br></br>
       <div>Uploading... {progress}%</div>
-      <br></br>
       <button
         className="post-btn"
         onClick={() => handleUploadFile(selectedFile)}
       >
-        Upload
+        Upload Image
+        <span>
+              <AddPhotoAlternateIcon />
+            </span>
       </button>
     </div>
   );

@@ -1,9 +1,12 @@
 .pagetitle{
+    position: absolute;
     color: white;
     font-size: 60px;
 display: flex;
 align-items: center;
 height: 10vh;
-margin-top: 10%
+justify-content: center;
+top: 30%;
+width: 100%;
 }
 

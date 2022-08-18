@@ -1,50 +1,32 @@
 import React from "react";
+import PageTitle from "../PageTitle/PageTitle";
 import "./SubNav.css";
 
 function SubNav(props) {
   return (
+    <>
     <div className="subnav">
       <div
         className="mainnav"
+        tabindex="1"
         onClick={() => {
           props.updateCurrentTabTo(1);
         }}
       >
-        Feed
+        Inspo Feed
       </div>
       <div
         className="mainnav"
+        tabindex="2"
         onClick={() => {
           props.updateCurrentTabTo(2);
         }}
       >
-        Inspo
-      </div>
-      <div
-        className="mainnav"
-        onClick={() => {
-          props.updateCurrentTabTo(3);
-        }}
-      >
-        Add Pci
-      </div>
-      <div
-        className="mainnav"
-        onClick={() => {
-          props.updateCurrentTabTo(4);
-        }}
-      >
-        Add Post
-      </div>
-      <div
-        className="mainnav"
-        onClick={() => {
-          props.updateCurrentTabTo(5);
-        }}
-      >
-        Chat
+        Boards
       </div>
     </div>
+    <PageTitle />
+    </>
   );
 }
 
