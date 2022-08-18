@@ -23,7 +23,7 @@ function Feed(props) {
   return (
     <>
       <div
-        className="header "
+        className="bannerheader"
         style={{ backgroundImage: `url(${header})` }}
       ></div>
       <DeletableChips user={props.user} />

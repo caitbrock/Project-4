@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="Chat">
-              <div className="header" style={{ backgroundImage: `url(${header})` }}></div>
+              <div className="bannerheader" style={{ backgroundImage: `url(${header})` }}></div>
       <div className="chatbox">
         {chat.length > 0 ? (
           chat.map((msg, idx) => <li key={`${idx}-${msg}`}>{msg}</li>)

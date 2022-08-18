@@ -42,7 +42,7 @@ class HomePage extends React.Component {
       button = <Socket user={this.props.user}/>;
     } else {button = <Profile user={this.props.user}/>;}
     return (
-      <div className="component">
+      <div>
         <Nav showLogin={this.state.showLogin} user={this.props.user} setUserInState={this.props.setUserInState} updateCurrentTabTo={this.updateCurrentTabTo}/>
         <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
         {button}

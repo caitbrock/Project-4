@@ -47,7 +47,7 @@ class CreatePost extends React.Component {
     return (
       <>
         <div
-          className="header "
+          className="bannerheader"
           style={{ backgroundImage: `url(${header})` }}
         ></div>
         <div className="addpost">

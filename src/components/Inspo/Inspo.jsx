@@ -6,7 +6,7 @@ function Inspo() {
   return (
     <>
       <div
-        className="header "
+        className="bannerheader"
         style={{ backgroundImage: `url(${header})` }}
       ></div>
       <div
