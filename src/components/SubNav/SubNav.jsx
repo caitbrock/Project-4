@@ -5,27 +5,27 @@ import "./SubNav.css";
 function SubNav(props) {
   return (
     <>
-    <div className="subnav">
-      <div
-        className="mainnav"
-        tabindex="1"
-        onClick={() => {
-          props.updateCurrentTabTo(1);
-        }}
-      >
-        Inspo Feed
+      <div className="subnav">
+        <div
+          className="mainnav"
+          tabindex="1"
+          onClick={() => {
+            props.updateCurrentTabTo(1);
+          }}
+        >
+          Inspo Feed
+        </div>
+        <div
+          className="mainnav"
+          tabindex="2"
+          onClick={() => {
+            props.updateCurrentTabTo(2);
+          }}
+        >
+          Boards
+        </div>
       </div>
-      <div
-        className="mainnav"
-        tabindex="2"
-        onClick={() => {
-          props.updateCurrentTabTo(2);
-        }}
-      >
-        Boards
-      </div>
-    </div>
-    <PageTitle />
+      <PageTitle />
     </>
   );
 }
