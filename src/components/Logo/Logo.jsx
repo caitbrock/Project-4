@@ -6,7 +6,7 @@ class Logo extends Component {
   render () {
   return (
   <>
-      <img className="logo-nav" src={logo}/>
+      <img className="logo-nav" src={logo} onClick={() => {props.updateCurrentTabTo(1)}}/>
       </>
   )
 }}
