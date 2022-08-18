@@ -1,4 +1,4 @@
-//const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+// const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
 // module.exports = {
 //   resolve: {
@@ -17,3 +17,9 @@
 //     },
 //   },
 // };
+
+module.exports = {
+devServer: {
+    compress: true,
+    disableHostCheck: true,  
+ }}
