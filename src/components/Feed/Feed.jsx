@@ -8,9 +8,9 @@ function Feed(props) {
   useEffect(() => {
     async function fetchData() {
       let data = await fetch("/api/posts");
-      console.log(data);
       let postData = await data.json();
       setPosts(postData);
+      console.log(posts);
     }
     fetchData();
   }, []);
