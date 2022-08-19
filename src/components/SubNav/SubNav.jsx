@@ -8,7 +8,7 @@ function SubNav(props) {
       <div className="subnav">
         <div
           className="mainnav"
-          tabindex="1"
+          tabIndex="1"
           onClick={() => {
             props.updateCurrentTabTo(1);
           }}
@@ -17,7 +17,7 @@ function SubNav(props) {
         </div>
         <div
           className="mainnav"
-          tabindex="2"
+          tabIndex="2"
           onClick={() => {
             props.updateCurrentTabTo(2);
           }}

@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 import "./DeletableChips.css";
 
 const ListItem = styled("li")(({ theme }) => ({
@@ -21,10 +21,10 @@ export default function DeletableChips(props) {
     setChipData(interestData);
   }, [props.user.interests]);
 
-
-const [newInterest, setNewInterest] = React.useState('')
-const handleInterestChange = (evt) => {
-setNewInterest(evt.target.value)}
+  const [newInterest, setNewInterest] = React.useState("");
+  const handleInterestChange = (evt) => {
+    setNewInterest(evt.target.value);
+  };
 
   const handleDelete = (chipToDelete) => () => {
     setChipData((chips) =>
@@ -68,14 +68,25 @@ setNewInterest(evt.target.value)}
         }}
         component="ul"
       >
-         <form className="interestform" autoComplete="off" onSubmit={(evt) => {
-          console.log(props)
-          evt.preventDefault()
-          console.log(props)
-          props.updateInterest(evt, newInterest)}}>
-            <input type='text' placeholder="Add new interest…" onChange={handleInterestChange} />
-              <button classname="submit" ><SearchIcon/></button>
-              </form>
+        <form
+          className="interestform"
+          autoComplete="off"
+          onSubmit={(evt) => {
+            console.log(props);
+            evt.preventDefault();
+            console.log(props);
+            props.updateInterest(evt, newInterest);
+          }}
+        >
+          <input
+            type="text"
+            placeholder="Add new interest…"
+            onChange={handleInterestChange}
+          />
+          <button className="submit">
+            <SearchIcon />
+          </button>
+        </form>
 
         {chipData.map((data) => {
           let icon;
@@ -90,9 +101,18 @@ setNewInterest(evt.target.value)}
                 onDelete={handleDelete(data)}
               />
             </ListItem>
+
+              <ListItem key={data.key}>
+                <Chip
+                  color="secondary"
+                  icon={icon}
+                  label={data.label}
+                  onDelete={handleDelete(data)}
+                />
+              </ListItem>
+
             </>
           );
-          
         })}
       </Paper>
     </ThemeProvider>
