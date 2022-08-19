@@ -1,3 +1,4 @@
+import AWS from "aws-sdk";
 import React from "react";
 import FileUpload from "../FileUpload/FileUpload";
 import header from "../../Header-IM.jpg";
@@ -50,50 +51,48 @@ class CreatePost extends React.Component {
           style={{ backgroundImage: `url(${header})` }}
         ></div>
         <div className="addpost">
-          <div className="uploadform">
-            <form onSubmit={this.handlePost}>
+          <form onSubmit={this.handlePost}>
+            <div class="form-group">
+              <input type="file" class="form-control-file" name="file" />
+            </div>
+            <label></label>
             <label>
-                {/* //JASON
-                <input type="file" class="form-control-file" name="file" /> */}
-              </label>
-              <label>
-                Title:
-                <input
-                  type="text"
-                  name="title"
-                  value={this.state.title}
-                  onChange={this.handleChange}
-                  required
-                />
-              </label>
-              <label>
-                Description:
-                <input
-                  type="text"
-                  name="description"
-                  value={this.state.description}
-                  onChange={this.handleChange}
-                  required
-                />
-              </label>
-              <label>
-                Location:
-                <input
-                  type="text"
-                  name="destination"
-                  value={this.state.destination}
-                  onChange={this.handleChange}
-                  required
-                />
-              </label>
-              <button className="submit">
-                Inspire Others
-                <span>
-                  <PublicRoundedIcon />
-                </span>
-              </button>
-            </form>
-          </div>
+              Title:
+              <input
+                type="text"
+                name="title"
+                value={this.state.title}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
+            <label>
+              Description:
+              <input
+                type="text"
+                name="description"
+                value={this.state.description}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
+            <label>
+              Location:
+              <input
+                type="text"
+                name="destination"
+                value={this.state.destination}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
+            <button className="submit">
+              Inspire Others
+              <span>
+                <PublicRoundedIcon />
+              </span>
+            </button>
+          </form>
         </div>
       </>
     );
