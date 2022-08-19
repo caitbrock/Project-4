@@ -22,7 +22,16 @@ async function create(req, res) {
   }
 }
 
+async function deletePost(req, res) {
+    const post = Post.findById(req.params.postId, function (err, post) {
+    if (post === -1) return res.send("404: Meal not found");
+    await let removedPost = post.splice(idx, 1);
+    post.save(function (err, post) {
+    return res.redirect(`/`)})})}
+
+
 module.exports = {
   create,
   index,
+  deletePost, 
 };

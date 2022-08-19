@@ -8,8 +8,13 @@ import Chip from "@mui/material/Chip";
 
 function Images(props) {
   return (
-  
-    <div className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350}}>
+    <div
+      onClick={() => {
+        props.handleBoard;
+      }}
+      className="imagecard"
+      style={{ margin: "20px", maxWidth: 350, minWidth: 350 }}
+    >
       <div>
         <div component="img" height="140" image="" alt="Random Image" />
         <div>
@@ -19,13 +24,15 @@ function Images(props) {
           <div variant="body2" color="text.secondary">
             {props.destination}
           </div>
-          <Chip label="#Tag1" variant="outlined" />
-          <Chip label="#Tag2" variant="outlined" />
-          <Chip label="#Tag3" variant="outlined" />
+          <form
+          class="delete-meal"
+          action="/calories/<%=calorie._id%>/meals/<%= r._id%>?_method=DELETE"
+          method="POST"
+        >        <input type="submit" value="Delete Meal"> 
+        </form>
         </div>
       </div>
     </div>
-    
   );
 }
 

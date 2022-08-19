@@ -5,25 +5,26 @@ import CreatePost from "../../components/CreatePost/CreatePost.jsx";
 import Inspo from "../../components/Inspo/Inspo";
 import Socket from "../../components/Socket/Socket";
 import SubNav from "../../components/SubNav/SubNav";
-import Profile from '../../components/Profile/Profile';
+import Profile from "../../components/Profile/Profile";
 import "./HomePage.css";
-
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 class HomePage extends React.Component {
   state = {
     showLogin: true,
     currentTab: 1,
     show: 1,
+    currentTitle: "",
   };
 
-  updateCurrentTabTo = (tab) => {
-    this.setState({ currentTab: tab });
+  updateCurrentTabTo = (tab, title) => {
+    this.setState({ currentTab: tab, currentTitle: title });
   };
 
   render() {
     const travelComp = this.state.currentTab;
     let button;
-    
+
     if (travelComp == 1) {
       button = (
         <Feed
@@ -33,19 +34,32 @@ class HomePage extends React.Component {
         />
       );
     } else if (this.state.currentTab == 2) {
-      button = <Inspo user={this.props.user}
-      setUserInState={this.props.setUserInState}/>;
+      button = (
+        <Inspo
+          user={this.props.user}
+          setUserInState={this.props.setUserInState}
+        />
+      );
     } else if (this.state.currentTab == 3) {
-      button = <CreatePost user={this.props.user}/>;
+      button = <CreatePost user={this.props.user} />;
     } else if (this.state.currentTab == 4) {
-      button = <Socket user={this.props.user}/>;
-    } else {button = <Profile user={this.props.user}/>;}
+      button = <Socket user={this.props.user} />;
+    } else {
+      button = <Profile user={this.props.user} />;
+    }
+
     return (
       <div>
-        <Nav showLogin={this.state.showLogin} user={this.props.user} setUserInState={this.props.setUserInState} updateCurrentTabTo={this.updateCurrentTabTo}/>
+        <Nav
+          showLogin={this.state.showLogin}
+          user={this.props.user}
+          setUserInState={this.props.setUserInState}
+          updateCurrentTabTo={this.updateCurrentTabTo}
+        />
         <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
+        <PageTitle title={this.state.currentTitle} />
+
         {button}
-        
       </div>
     );
   }

@@ -52,9 +52,7 @@ class CreatePost extends React.Component {
         ></div>
         <div className="addpost">
           <form onSubmit={this.handlePost}>
-            <div class="form-group">
-              <input type="file" class="form-control-file" name="file" />
-            </div>
+            <input type="file" class="form-control-file" name="file" />
             <label></label>
             <label>
               Title:

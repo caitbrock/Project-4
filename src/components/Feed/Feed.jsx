@@ -17,7 +17,28 @@ function Feed(props) {
     fetchData();
   }, []);
 
-  console.log(posts);
+  const handleBoard = async (e) => {
+    e.preventDefault();
+    try {
+      let jwt = localStorage.getItem("token");
+      let fetchResponse = await fetch("/api/boards", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + jwt,
+        },
+        body: JSON.stringify({
+          board_name: "Board 1",
+          Destinations: props.destination,
+        }), // <-- send this object to server
+      });
+      let serverResponse = await fetchResponse.json(); // <-- decode fetch response
+      console.log("Success:", serverResponse); // <-- log server response
+      this.setState({ title: "", description: "", destination: "" }); // if order sent without errors, set state to empty
+    } catch (err) {
+      console.error("Error:", err); // <-- log if error
+    }
+  };
 
   return (
     <>
@@ -26,23 +47,29 @@ function Feed(props) {
         style={{ backgroundImage: `url(${header})` }}
       ></div>
       <DeletableChips user={props.user} updateInterest={props.updateInterest} />
-      
       {posts ? (
         <div
           className="FeedImages"
-          style={{ display: "flex", justifyContent: "center", width: '100%', flexWrap: 'wrap'}}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+            flexWrap: "wrap",
+          }}
         >
           {posts.map((c) => (
-            <Images title={c.title} destination={c.destination} />
+            <Images
+              title={c.title}
+              destination={c.destination}
+              handleBoard={handleBoard}
+            />
           ))}
         </div>
       ) : (
         false
       )}
-      
     </>
   );
 }
 
 export default Feed;
-
