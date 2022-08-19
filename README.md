@@ -19,19 +19,20 @@
 
 Have you ever jotted down lists about potential restaurants, hotels, destinations, ect. in other cities you wanted to see? Or taken random screenshots that get saved haphazardly in your phone prior to a trip? Travelspo is a social media platform that provides aspiring travellers with a location to save information related to travels. 
 
+![PAGE 1](https://user-images.githubusercontent.com/106548841/185547431-10108580-0763-4cee-a87d-160d42486374.png)
+
+
+
+
 - The app allows users to sign up at which point they will indicate some travel preferences, which will help to filter inspo images.
 - The 'Inspo Feed' includes filtered images (based on indicated interests) which users are able to scroll through and add to specific themed boards they create within 'Boards'. 
 - Users can also upload and apply tags to their own images so it can be added to the database and used to inspire others.
 - Travelspo also includes a chat feature which allows aspiring travellers to connect with others on the platform.
 
-(image2)
-
 ### Getting Started:
 
 - The app has been uploaded to Heroku, and is accessible by clicking [Travelspo](Link:)
 - Click here to access our [Trello Board](https://trello.com/b/bcJHqtr1/project-4)
-
-(image3)
 
 ### Features: 
 
@@ -42,7 +43,6 @@ Have you ever jotted down lists about potential restaurants, hotels, destination
 - Upload and Delete images with tags to share with other users.
 - Chat feature.
 
-(image4)
 
 ### Technologies Used:
 
@@ -60,10 +60,11 @@ Have you ever jotted down lists about potential restaurants, hotels, destination
 
 ### Screen Shots is down below:
 
-(Sign Up Page)
-(Inspo Feed)
-(Upload an Image)
-(Chat)
+![PAGE 0](https://user-images.githubusercontent.com/106548841/185547331-f1fafec9-e7cc-4e6e-9944-daf3a9274e53.png)
+![PAGE 2](https://user-images.githubusercontent.com/106548841/185547448-c7cdb86d-160d-4433-8e99-ff5366d71d59.png)
+![PAGE 3](https://user-images.githubusercontent.com/106548841/185547455-a5b4c0d5-c7eb-4651-8ce0-64abc8c75759.png)
+![PAGE 4](https://user-images.githubusercontent.com/106548841/185547461-d88c40c2-4e98-40e5-abd0-b5fd16cf95ab.png)
+
 
 <p align="right"><a href="#top">back to top</a></p>
 
