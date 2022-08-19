@@ -9,6 +9,7 @@ function SubNav(props) {
         <div
           className="mainnav"
           tabIndex="1"
+
           onClick={() => {
             props.updateCurrentTabTo(1);
           }}

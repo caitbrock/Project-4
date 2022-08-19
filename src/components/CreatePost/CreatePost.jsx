@@ -9,14 +9,21 @@ class CreatePost extends React.Component {
     title: "",
     description: "",
     destination: "",
+    tags: []
   };
-
+  
   handleChange = (evt) => {
     this.setState({
       [evt.target.name]: evt.target.value,
       error: "",
     });
   };
+
+  // const handleDeleteTag = (tagToDelete) => () => {
+  //   setTagData((tags) =>
+  //     tags.filter((tag) => tag.key !== tagToDelete.key)
+  //   );
+  // };
 
   handlePost = async (e) => {
     e.preventDefault();

@@ -61,7 +61,7 @@ export default function DeletableChips(props) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          flexWrap: "no-wrap",
+          flexWrap: "wrap",
           listStyle: "none",
           p: 3,
           m: 2,
@@ -72,9 +72,7 @@ export default function DeletableChips(props) {
           className="interestform"
           autoComplete="off"
           onSubmit={(evt) => {
-            console.log(props);
             evt.preventDefault();
-            console.log(props);
             props.updateInterest(evt, newInterest);
           }}
         >
@@ -83,7 +81,7 @@ export default function DeletableChips(props) {
             placeholder="Add new interest…"
             onChange={handleInterestChange}
           />
-          <button className="submit">
+          <button className="submitsearch">
             <SearchIcon />
           </button>
         </form>
@@ -101,15 +99,6 @@ export default function DeletableChips(props) {
                 onDelete={handleDelete(data)}
               />
             </ListItem>
-
-              <ListItem key={data.key}>
-                <Chip
-                  color="secondary"
-                  icon={icon}
-                  label={data.label}
-                  onDelete={handleDelete(data)}
-                />
-              </ListItem>
 
             </>
           );

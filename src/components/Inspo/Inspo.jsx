@@ -11,11 +11,10 @@ function Inspo() {
       ></div>
       <div
         className="boardcollections"
-        style={{ display: "flex", justifyContent: "center" }}
-      >
-        <Images />
-        <Images />
-        <Images />
+        style={{ display: "flex", justifyContent: "center" }}>
+        <div></div> 
+        <div> </div>
+        <div> </div>
       </div>
     </>
   );
