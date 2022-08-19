@@ -17,8 +17,8 @@ function Nav(props) {
       <div className="right">
         {props.user ? (
           <div className="info">
-            <div className='icon' style={{backgroundColor: '#cdcf6f', height:'50px', width: '50px', borderRadius:'50%', margin:'20px'}} onClick={() => {props.updateCurrentTabTo(3)}}><AddAPhotoOutlinedIcon style={{margin: '13px'}}/></div>
-            <div className='icon' style={{backgroundColor: '#a8ca52', height:'50px', width: '50px', borderRadius:'50%', marginRight:'20px'}} onClick={() => {props.updateCurrentTabTo(4)}}><ChatOutlinedIcon style={{ margin: '13px'}}/></div>
+            <div className='icon' style={{backgroundColor: '#cdcf6f', height:'50px', width: '50px', borderRadius:'50%', margin:'20px'}} onClick={() => {props.updateCurrentTabTo(3, "Create a Post")}}><AddAPhotoOutlinedIcon style={{margin: '13px'}}/></div>
+            <div className='icon' style={{backgroundColor: '#a8ca52', height:'50px', width: '50px', borderRadius:'50%', marginRight:'20px'}} onClick={() => {props.updateCurrentTabTo(4, "Chat with Travellers")}}><ChatOutlinedIcon style={{ margin: '13px'}}/></div>
             <Profile user={props.user} setUserInState={props.setUserInState} onClick={() => {props.updateCurrentTabTo(5)}}/>
             
             <UserLogOut

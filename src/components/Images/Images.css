@@ -10,8 +10,8 @@ border: .5px solid #b8b8b8;
 }
 
 .upload-image{
-    display: flex;
-    min-width: 300px;
+display: flex;
+min-width: 300px;
 min-height: 300px;
 margin-top: 20px;
 justify-content: center;

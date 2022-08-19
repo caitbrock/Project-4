@@ -67,17 +67,20 @@ class CreatePost extends React.Component {
       <>
         <div
           className="bannerheader"
-          style={{ backgroundImage: `url(${header})` }}
-        ></div>
-        <div className="addpost">
+          style={{ backgroundImage: `url(${header})` }}>
+          </div>
+
+        <div >
+          
           <div className="uploadform">
             <form
+              className="addpost"
               action="/"
               enctype="multipart/form-data"
               method="post"
               onSubmit={this.handlePost}
             >
-              <label>
+              <label className="addpostlabel">
                 <input
                   type="file"
                   class="form-control-file"
@@ -85,7 +88,7 @@ class CreatePost extends React.Component {
                   onChange={this.handleChange}
                 />
               </label>
-              <label>
+              <label className="addpostlabel">
                 Title:
                 <input
                   type="text"
@@ -95,7 +98,7 @@ class CreatePost extends React.Component {
                   required
                 />
               </label>
-              <label>
+              <label className="addpostlabel">
                 Description:
                 <input
                   type="text"
@@ -105,7 +108,7 @@ class CreatePost extends React.Component {
                   required
                 />
               </label>
-              <label>
+              <label className="addpostlabel">
                 Location:
                 <input
                   type="text"

@@ -16,6 +16,13 @@
     background-color: #CCD5AE
 }
 
+.mainnav:focus{
+    background-color: #CCD5AE
+}
+
+.mainnav:active{
+    background-color: #CCD5AE
+}
 .subnav{
     position: absolute;
     display: flex;

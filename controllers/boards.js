@@ -12,7 +12,7 @@ async function addtoBoard(req, res) {
     // 1. put the order in the database (the data will be incoming via `req.body`)
     const board = await Board.create({
       title: req.body.title,
-      desription: req.body.desription,
+      description: req.body.description,
       destination: req.body.destination,
     });
     console.log(board);

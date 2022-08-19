@@ -3,6 +3,7 @@ import PageTitle from "../PageTitle/PageTitle";
 import "./SubNav.css";
 
 function SubNav(props) {
+  
   return (
     <>
       <div className="subnav">
@@ -11,7 +12,7 @@ function SubNav(props) {
           tabIndex="1"
 
           onClick={() => {
-            props.updateCurrentTabTo(1);
+            props.updateCurrentTabTo(1, "Feed"); 
           }}
         >
           Inspo Feed
@@ -20,7 +21,7 @@ function SubNav(props) {
           className="mainnav"
           tabIndex="2"
           onClick={() => {
-            props.updateCurrentTabTo(2);
+            props.updateCurrentTabTo(2, "Boards");
           }}
         >
           Boards

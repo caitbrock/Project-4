@@ -6,6 +6,7 @@ import Inspo from "../../components/Inspo/Inspo";
 import Socket from "../../components/Socket/Socket";
 import SubNav from "../../components/SubNav/SubNav";
 import Profile from '../../components/Profile/Profile';
+import PageTitle from "../../components/PageTitle/PageTitle";
 import "./HomePage.css";
 
 
@@ -14,10 +15,11 @@ class HomePage extends React.Component {
     showLogin: true,
     currentTab: 1,
     show: 1,
+    currentTitle: "Feed",
   };
 
-  updateCurrentTabTo = (tab) => {
-    this.setState({ currentTab: tab });
+  updateCurrentTabTo = (tab, title) => {
+    this.setState({ currentTab: tab, currentTitle: title });
   };
 
   render() {
@@ -44,6 +46,7 @@ class HomePage extends React.Component {
       <div>
         <Nav showLogin={this.state.showLogin} user={this.props.user} setUserInState={this.props.setUserInState} updateCurrentTabTo={this.updateCurrentTabTo}/>
         <SubNav updateCurrentTabTo={this.updateCurrentTabTo} />
+        <PageTitle title={this.state.currentTitle} />
         {button}
         
       </div>

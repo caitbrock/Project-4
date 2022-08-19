@@ -10,19 +10,16 @@
     <li><a href="#features">Features</a></li>
     <li><a href="#technologies-used">Technologies Used</a></li>
     <li><a href="#screen-shots">Screen Shots</a></li>
-    <li><a href="#Usage">Usage</a></li>
+    <li><a href="#next-steps">Next Steps</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
-### About Our Project:
+### Project Description:
 
-Have you ever jotted down lists about potential restaurants, hotels, destinations, ect. in other cities you wanted to see? Or taken random screenshots that get saved haphazardly in your phone prior to a trip? Travelspo is a social media platform that provides aspiring travellers with a location to save information related to travels. 
+Have you ever created random lists of potential restaurants, hotels, destinations, ect. you want to visit? What about taking random screenshots that get saved haphazardly in your phone prior to a trip? Travelspo is a social media platform that provides aspiring travellers with a location to save information related to travels. 
 
 ![PAGE 1](https://user-images.githubusercontent.com/106548841/185547431-10108580-0763-4cee-a87d-160d42486374.png)
-
-
-
 
 - The app allows users to sign up at which point they will indicate some travel preferences, which will help to filter inspo images.
 - The 'Inspo Feed' includes filtered images (based on indicated interests) which users are able to scroll through and add to specific themed boards they create within 'Boards'. 
@@ -42,7 +39,6 @@ Have you ever jotted down lists about potential restaurants, hotels, destination
 - Create themed boards as a place to organize images.
 - Upload and Delete images with tags to share with other users.
 - Chat feature.
-
 
 ### Technologies Used:
 
@@ -65,7 +61,6 @@ Have you ever jotted down lists about potential restaurants, hotels, destination
 ![PAGE 3](https://user-images.githubusercontent.com/106548841/185547455-a5b4c0d5-c7eb-4651-8ce0-64abc8c75759.png)
 ![PAGE 4](https://user-images.githubusercontent.com/106548841/185547461-d88c40c2-4e98-40e5-abd0-b5fd16cf95ab.png)
 
-
 <p align="right"><a href="#top">back to top</a></p>
 
 ### Next Steps: 
@@ -77,7 +72,6 @@ Moving forward, a few items to further implement would be:
 3. Continue to build out the filter features of the app.
 4. Continue to refine the chat portion of the app to allow for greater interaction.
 5. Create a profile page where the travellers information and previous travels are displayed.
-
 
 ### Contact: 
 

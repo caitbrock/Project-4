@@ -12,6 +12,7 @@ const ListItem = styled("li")(({ theme }) => ({
 
 export default function DeletableChips(props) {
   const [chipData, setChipData] = React.useState([]);
+  
 
   React.useEffect(() => {
     const interestData = props.user.interests.map((interest, idx) => ({
@@ -74,6 +75,7 @@ export default function DeletableChips(props) {
           onSubmit={(evt) => {
             evt.preventDefault();
             props.updateInterest(evt, newInterest);
+            
           }}
         >
           <input
