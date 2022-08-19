@@ -17,10 +17,8 @@ class App extends Component {
   };
 
   updateInterest = (evt, newInterest) => {
-    // evt.preventDefault();
      this.setState(state => ({
      user: {...this.state.user, interests: [...this.state.user.interests, newInterest]}
-      
       }));
       console.log(newInterest)
     }

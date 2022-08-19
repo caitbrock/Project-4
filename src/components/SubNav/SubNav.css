@@ -16,16 +16,12 @@
     background-color: #CCD5AE
 }
 
-.mainnav:focus{
-    background-color: #CCD5AE
-}
-
 .subnav{
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 20%;
+    top: 28%;
     gap:50px;
     width: 100%;
     height: px;

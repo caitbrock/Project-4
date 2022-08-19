@@ -32,9 +32,7 @@ function Feed(props) {
           className="FeedImages"
           style={{ display: "flex", justifyContent: "center", width: '100%', flexWrap: 'wrap'}}
         >
-          {posts.map((c) => (
-            <Images title={c.title} destination={c.destination} />
-          ))}
+            <Images posts={posts} />
         </div>
       ) : (
         false

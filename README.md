@@ -19,8 +19,6 @@
 
 Have you ever jotted down lists about potential restaurants, hotels, destinations, ect. in other cities you wanted to see? Or taken random screenshots that get saved haphazardly in your phone prior to a trip? Travelspo is a social media platform that provides aspiring travellers with a location to save information related to travels. 
 
-(image1)
-
 - The app allows users to sign up at which point they will indicate some travel preferences, which will help to filter inspo images.
 - The 'Inspo Feed' includes filtered images (based on indicated interests) which users are able to scroll through and add to specific themed boards they create within 'Boards'. 
 - Users can also upload and apply tags to their own images so it can be added to the database and used to inspire others.
@@ -73,10 +71,11 @@ Have you ever jotted down lists about potential restaurants, hotels, destination
 
 Moving forward, a few items to further implement would be:
 
-1. Implement payment at checkout functionality
-2. Adding a reviews component to a product
-3. Applying additional filter features to the home page
-4. Adding a follow feature on a users profile so shoppers can follow their favourite accounts
+1. Pull the image url from AWS to display it on the home page.
+2. Build out the pages required for building a board and add more functionality.
+3. Continue to build out the filter features of the app.
+4. Continue to refine the chat portion of the app to allow for greater interaction.
+5. Create a profile page where the travellers information and previous travels are displayed.
 
 
 ### Contact: 
