@@ -53,9 +53,9 @@ class CreatePost extends React.Component {
           <div className="uploadform">
             <form onSubmit={this.handlePost}>
             <label>
-                Title:
-                <input type="file" class="form-control-file" name="file" />
-                </label>
+                {/* //JASON
+                <input type="file" class="form-control-file" name="file" /> */}
+              </label>
               <label>
                 Title:
                 <input

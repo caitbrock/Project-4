@@ -9,24 +9,41 @@ import Chip from "@mui/material/Chip";
 function Images(props) {
   return (
   
-    <Card className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350, height: '100%', width: '100%'}}>
-      <CardActionArea>
-        <CardMedia component="img" height="140" image="" alt="Random Image" />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+    <div className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350}}>
+      <div>
+        <div component="img" height="140" image="" alt="Random Image" />
+        <div>
+          <div gutterBottom variant="h5" component="div">
             {props.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+          </div>
+          <div variant="body2" color="text.secondary">
             {props.destination}
-          </Typography>
+          </div>
           <Chip label="#Tag1" variant="outlined" />
           <Chip label="#Tag2" variant="outlined" />
           <Chip label="#Tag3" variant="outlined" />
-        </CardContent>
-      </CardActionArea>
-    </Card>
+        </div>
+      </div>
+    </div>
     
   );
 }
 
 export default Images;
+
+// <Card className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350, height: '100%', width: '100%'}}>
+// <CardActionArea>
+//   <CardMedia component="img" height="140" image="" alt="Random Image" />
+//   <CardContent>
+//     <Typography gutterBottom variant="h5" component="div">
+//       {props.title}
+//     </Typography>
+//     <Typography variant="body2" color="text.secondary">
+//       {props.destination}
+//     </Typography>
+//     <Chip label="#Tag1" variant="outlined" />
+//     <Chip label="#Tag2" variant="outlined" />
+//     <Chip label="#Tag3" variant="outlined" />
+//   </CardContent>
+// </CardActionArea>
+// </Card>
