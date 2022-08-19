@@ -11,7 +11,7 @@ export default class AuthPage extends React.Component {
   render() {
     return (
         <>
-        <Nav showLogin={this.state.showLogin} user={this.props.user} />
+        <Nav showLogin={this.state.showLogin} user={this.props.user} setUserInState={this.props.setUserInState}/>
         <SignUpForm setUserInState={this.props.setUserInState} />
       </>
     );

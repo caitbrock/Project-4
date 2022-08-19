@@ -1,32 +1,39 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
 import Chip from "@mui/material/Chip";
+import "./Images.css";
+import { styled } from "@mui/material/styles";
+
+const ListItem = styled("li")(({ theme }) => ({
+  margin: theme.spacing(0.5),
+}));
 
 function Images(props) {
   return (
-  
-    <Card className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350, height: '100%', width: '100%'}}>
-      <CardActionArea>
-        <CardMedia component="img" height="140" image="" alt="Random Image" />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {props.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {props.destination}
-          </Typography>
-          <Chip label="#Tag1" variant="outlined" />
-          <Chip label="#Tag2" variant="outlined" />
-          <Chip label="#Tag3" variant="outlined" />
-        </CardContent>
-      </CardActionArea>
-    </Card>
+  <>
+    {props.posts.map((c) => (
+    <div className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350}}>
+      <div className="imagecontent">
+        <div className="upload-image" component="img"></div>
+        <div className="image-title"> <h5>{c.title}</h5></div>
+        <div className="image-desription"> <h6>{c.destination}</h6></div>
+        <div className="image-desription"> <h6>{c.description}</h6></div>
+      </div>
     
-  );
-}
+    {c.tags.map((m) => (
+      <div className="imagetags">{m.tags}</div>
+    ))}
+    
+    </div>
+      )
+      )
+      }
+  </>
+  )}
+
+
+  
 
 export default Images;
+
+
+

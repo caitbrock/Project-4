@@ -10,6 +10,7 @@ export default class LoginForm extends Component {
     email: '',
     password: '',
     error: '',
+    user: null,
   };
 
   handleChange = (evt) => {
@@ -20,9 +21,9 @@ export default class LoginForm extends Component {
   };
 
   handleSubmit = async (evt) => {
+    console.log(this.state)
     evt.preventDefault();
     try {
-
       const fetchResponse = await fetch('/api/users/login', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
@@ -36,7 +37,7 @@ export default class LoginForm extends Component {
       localStorage.setItem('token', token);  
 
       const userDoc = JSON.parse(atob(token.split('.')[1])).user;
-      this.props.setUserInState(userDoc)
+      this.setState({user: userDoc})
 
     } catch (err) {
       console.log("SignupForm error", err)

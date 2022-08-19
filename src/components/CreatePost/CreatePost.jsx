@@ -11,6 +11,7 @@ class CreatePost extends React.Component {
     description: "",
     destination: "",
     selectedFile: null,
+    tags: [],
   };
 
   handleChange = (evt) => {
@@ -20,6 +21,12 @@ class CreatePost extends React.Component {
     });
     this.setState({ selectedFile: evt.target.files[0] });
   };
+
+  // const handleDeleteTag = (tagToDelete) => () => {
+  //   setTagData((tags) =>
+  //     tags.filter((tag) => tag.key !== tagToDelete.key)
+  //   );
+  // };
 
   handlePost = async (e) => {
     e.preventDefault();

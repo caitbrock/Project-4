@@ -1,7 +1,6 @@
 import React from "react";
 import Feed from "../../components/Feed/Feed";
 import Nav from "../../components/Nav/Nav";
-import YourBoards from "../../components/YourBoards/YourBoards";
 import CreatePost from "../../components/CreatePost/CreatePost.jsx";
 import Inspo from "../../components/Inspo/Inspo";
 import Socket from "../../components/Socket/Socket";

@@ -12,7 +12,6 @@ function Feed(props) {
         .then((response) => response.json())
         .then((posts) => {
           setPosts(posts);
-          // const postsList = post.map((post) => post.title, post.destination);
         });
     }
     fetchData();
@@ -31,11 +30,9 @@ function Feed(props) {
       {posts ? (
         <div
           className="FeedImages"
-          style={{ display: "flex", justifyContent: "center" }}
+          style={{ display: "flex", justifyContent: "center", width: '100%', flexWrap: 'wrap'}}
         >
-          {posts.map((c) => (
-            <Images title={c.title} destination={c.destination} />
-          ))}
+            <Images posts={posts} />
         </div>
       ) : (
         false
@@ -47,27 +44,3 @@ function Feed(props) {
 
 export default Feed;
 
-//store mongoose url use a base s3 url, after that it is slash
-
-// class Feed extends React.Component {
-//   state = {
-//     user: null,
-//     currentTab: 1,
-//   };
-
-//   fetchData = async () => {
-//     const dataFetch = await fetch("api/posts");
-//     const stringData = await dataFetch.json;
-//     console.log(stringData);
-//   };
-
-//   fetchData()
-
-//   render() {
-// <Images />
-// <Images />
-// <Images />
-
-// {posts.map((c) => (
-//   <Images title={c.title} destination={c.destination} />
-// ))}
