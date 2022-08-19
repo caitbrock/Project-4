@@ -48,7 +48,7 @@ For this project we worked and collaborated with a UX/UI Design team to better u
 - The wireframe material was prepared in Figma, and is accessible by clicking [Figma](Link: https://www.figma.com/file/36R9HpRxx7yWSSFUpKASLp/Travelspo?node-id=0%3A1)
 
 Check UX/UI Team Members on Linkedin
-- Apoorva| [Github]()   [Linkedin]()
+- Apoorva | [Github]()   [Linkedin]()
 - Kaitlan | [Github]()   [Linkedin]()
 - Sanah | [Github]()   [Linkedin]()
 - Thomas | [Github]()   [Linkedin]()
