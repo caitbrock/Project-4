@@ -1,4 +1,5 @@
 import React from "react";
+import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import FileUpload from "../FileUpload/FileUpload";
 import header from "../../Header-IM.jpg";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
@@ -9,14 +10,16 @@ class CreatePost extends React.Component {
     title: "",
     description: "",
     destination: "",
-    tags: []
+    selectedFile: null,
+    tags: [],
   };
-  
+
   handleChange = (evt) => {
     this.setState({
       [evt.target.name]: evt.target.value,
       error: "",
     });
+    this.setState({ selectedFile: evt.target.files[0] });
   };
 
   // const handleDeleteTag = (tagToDelete) => () => {
@@ -28,6 +31,16 @@ class CreatePost extends React.Component {
   handlePost = async (e) => {
     e.preventDefault();
     try {
+      let formData = new FormData();
+      formData.append("file", this.state.selectedFile);
+      console.log(this.state.selectedFile);
+
+      fetch("http://localhost:8080/", {
+        method: "POST",
+        body: formData,
+      })
+        .then((res) => res.json())
+        .catch((err) => console.error(err));
       let jwt = localStorage.getItem("token");
       let fetchResponse = await fetch("/api/posts", {
         method: "POST",
@@ -58,10 +71,19 @@ class CreatePost extends React.Component {
         ></div>
         <div className="addpost">
           <div className="uploadform">
-            <form onSubmit={this.handlePost}>
-            <label>
-                {/* //JASON
-                <input type="file" class="form-control-file" name="file" /> */}
+            <form
+              action="/"
+              enctype="multipart/form-data"
+              method="post"
+              onSubmit={this.handlePost}
+            >
+              <label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  name="file"
+                  onChange={this.handleChange}
+                />
               </label>
               <label>
                 Title:
@@ -93,7 +115,7 @@ class CreatePost extends React.Component {
                   required
                 />
               </label>
-              <button className="submit">
+              <button className="submit" type="submit">
                 Inspire Others
                 <span>
                   <PublicRoundedIcon />

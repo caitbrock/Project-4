@@ -72,5 +72,4 @@ const upload = multer({
 
 app.post("/", upload.single("file"), function (req, res, next) {
   console.log("Uploaded!!!");
-  res.redirect("/");
 });
