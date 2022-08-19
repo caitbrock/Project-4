@@ -70,8 +70,6 @@ class CreatePost extends React.Component {
           style={{ backgroundImage: `url(${header})` }}>
           </div>
 
-        <div >
-          
           <div className="uploadform">
             <form
               className="addpost"
@@ -118,15 +116,16 @@ class CreatePost extends React.Component {
                   required
                 />
               </label>
+              <div>
               <button className="submit" type="submit">
                 Inspire Others
                 <span>
                   <PublicRoundedIcon />
                 </span>
               </button>
+              </div>
             </form>
           </div>
-        </div>
       </>
     );
   }
