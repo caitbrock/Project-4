@@ -26,6 +26,10 @@ app.use(require("./config/auth"));
 
 app.use("/api/posts", require("./routes/api/posts"));
 
+app.use(
+  createProxyMiddleware(["/api", , "/otherApi"], { target: "http://localhost:8080" })
+);
+
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
