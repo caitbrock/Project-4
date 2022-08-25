@@ -30,10 +30,6 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-app.get("/*", function (req, res) {
-  res.send("<h1>Hello from chatapp</h1>");
-});
-
 const server = app.listen(port, () => {
   console.log(`server is running on port: ${port}`);
 });
@@ -41,8 +37,6 @@ const server = app.listen(port, () => {
 const io = require("./config/socket").init(server);
 
 io.on("connection", (socket) => {
-  console.log(`Socket: ${socket.id} connection was made`);
-  socket.emit("welcome", "welcome to my first socketIO app");
   socket.broadcast.emit("join", `Someone (${socket.id}) has joined the server`);
   socket.on("post", (data) => {
     socket.broadcast.emit("newPost", data);

@@ -8,6 +8,7 @@
     <li><a href="#project-description">Project Description</a></li>
     <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#features">Features</a></li>
+    <li><a href="#ux-ui-design">UX/UI Design</a></li>
     <li><a href="#technologies-used">Technologies Used</a></li>
     <li><a href="#screen-shots">Screen Shots</a></li>
     <li><a href="#next-steps">Next Steps</a></li>
@@ -39,6 +40,18 @@ Have you ever created random lists of potential restaurants, hotels, destination
 - Create themed boards as a place to organize images.
 - Upload and Delete images with tags to share with other users.
 - Chat feature.
+
+
+### UX/UI Design: 
+
+For this project we worked and collaborated with a UX/UI Design team to better understand the user experience.
+- The wireframe material was prepared in Figma, and is accessible by clicking [Figma](Link: https://www.figma.com/file/36R9HpRxx7yWSSFUpKASLp/Travelspo?node-id=0%3A1)
+
+Check UX/UI Team Members on Linkedin
+- Apoorva | [Github]()   [Linkedin]()
+- Kaitlan | [Github]()   [Linkedin]()
+- Sanah | [Github]()   [Linkedin]()
+- Thomas | [Github]()   [Linkedin]()
 
 ### Technologies Used:
 
