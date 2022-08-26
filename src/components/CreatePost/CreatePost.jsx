@@ -1,6 +1,4 @@
 import React from "react";
-import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
-import FileUpload from "../FileUpload/FileUpload";
 import header from "../../Header-IM.jpg";
 import PublicRoundedIcon from "@mui/icons-material/PublicRounded";
 import "./CreatePost.css";
@@ -10,7 +8,7 @@ class CreatePost extends React.Component {
     title: "",
     description: "",
     destination: "",
-    selectedFile: null,
+    selectedFile: [],
     tags: [],
   };
 
@@ -19,14 +17,8 @@ class CreatePost extends React.Component {
       [evt.target.name]: evt.target.value,
       error: "",
     });
-    this.setState({ selectedFile: evt.target.files[0] });
+    this.setState({ selectedFile: evt.target.files });
   };
-
-  // const handleDeleteTag = (tagToDelete) => () => {
-  //   setTagData((tags) =>
-  //     tags.filter((tag) => tag.key !== tagToDelete.key)
-  //   );
-  // };
 
   handlePost = async (e) => {
     e.preventDefault();
@@ -67,65 +59,65 @@ class CreatePost extends React.Component {
       <>
         <div
           className="bannerheader"
-          style={{ backgroundImage: `url(${header})` }}>
-          </div>
+          style={{ backgroundImage: `url(${header})` }}
+        ></div>
 
-          <div className="uploadform">
-            <form
-              className="addpost"
-              action="/"
-              enctype="multipart/form-data"
-              method="post"
-              onSubmit={this.handlePost}
-            >
-              <label className="addpostlabel">
-                <input
-                  type="file"
-                  class="form-control-file"
-                  name="file"
-                  onChange={this.handleChange}
-                />
-              </label>
-              <label className="addpostlabel">
-                Title:
-                <input
-                  type="text"
-                  name="title"
-                  value={this.state.title}
-                  onChange={this.handleChange}
-                  required
-                />
-              </label>
-              <label className="addpostlabel">
-                Description:
-                <input
-                  type="text"
-                  name="description"
-                  value={this.state.description}
-                  onChange={this.handleChange}
-                  required
-                />
-              </label>
-              <label className="addpostlabel">
-                Location:
-                <input
-                  type="text"
-                  name="destination"
-                  value={this.state.destination}
-                  onChange={this.handleChange}
-                  required
-                />
-              </label>
-              <div>
+        <div className="uploadform">
+          <form
+            className="addpost"
+            action="/"
+            enctype="multipart/form-data"
+            method="post"
+            onSubmit={this.handlePost}
+          >
+            <label className="addpostlabel">
+              <input
+                type="file"
+                class="form-control-file"
+                name="file"
+                onChange={this.handleChange}
+              />
+            </label>
+            <label className="addpostlabel">
+              Title:
+              <input
+                type="text"
+                name="title"
+                value={this.state.title}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
+            <label className="addpostlabel">
+              Description:
+              <input
+                type="text"
+                name="description"
+                value={this.state.description}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
+            <label className="addpostlabel">
+              Location:
+              <input
+                type="text"
+                name="destination"
+                value={this.state.destination}
+                onChange={this.handleChange}
+                required
+              />
+            </label>
+            <div>
               <button className="submit" type="submit">
                 Inspire Others
                 <span>
                   <PublicRoundedIcon />
                 </span>
               </button>
-              </div>
-            </form>
-          </div>
+            </div>
+          </form>
+        </div>
       </>
     );
   }
