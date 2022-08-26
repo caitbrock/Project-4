@@ -40,3 +40,6 @@ io.on("connection", (socket) => {
 
 const imageUpload = require("./routes/api/aws");
 app.use("/", imageUpload);
+
+const fileupload = require("express-fileupload");
+app.use(fileupload());

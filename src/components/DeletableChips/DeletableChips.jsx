@@ -12,7 +12,6 @@ const ListItem = styled("li")(({ theme }) => ({
 
 export default function DeletableChips(props) {
   const [chipData, setChipData] = React.useState([]);
-  
 
   React.useEffect(() => {
     const interestData = props.user.interests.map((interest, idx) => ({
@@ -75,7 +74,6 @@ export default function DeletableChips(props) {
           onSubmit={(evt) => {
             evt.preventDefault();
             props.updateInterest(evt, newInterest);
-            
           }}
         >
           <input
@@ -93,15 +91,14 @@ export default function DeletableChips(props) {
 
           return (
             <>
-            <ListItem key={data.key}>
-              <Chip
-                color="secondary"
-                icon={icon}
-                label={data.label}
-                onDelete={handleDelete(data)}
-              />
-            </ListItem>
-
+              <ListItem key={data.key}>
+                <Chip
+                  color="secondary"
+                  icon={icon}
+                  label={data.label}
+                  onDelete={handleDelete(data)}
+                />
+              </ListItem>
             </>
           );
         })}
