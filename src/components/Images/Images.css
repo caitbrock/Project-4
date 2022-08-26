@@ -23,3 +23,29 @@ background-size: cover;
 .image-title{
     margin-top: 20px;
 }
+
+.dropdown{
+    margin: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.btn {
+    background-color: rgb(205, 207, 111);
+    border-color: rgb(205, 207, 111);
+}
+
+.btn:hover {
+    background-color: #21302D;
+    border-color:  #21302D;
+}
+
+.btn:active, .btn:focus{
+    background-color: #21302D;
+    border-color:  #21302D;
+}
+
+.show>.btn-secondary.dropdown-toggle{
+    background-color: #21302D;
+    border-color:  #21302D;
+}

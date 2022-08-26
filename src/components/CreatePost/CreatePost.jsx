@@ -118,7 +118,7 @@ class CreatePost extends React.Component {
               </label>
               <div>
               <button className="submit" type="submit">
-                Inspire Others
+                Create Travelspo
                 <span>
                   <PublicRoundedIcon />
                 </span>
