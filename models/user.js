@@ -20,6 +20,7 @@ const userSchema = new Schema(
       requred: true,
     },
     interests: { type: Array, required: true },
+    boards: { type: Array },
     travelCollection: {
       Object,
     },
@@ -30,7 +31,7 @@ const userSchema = new Schema(
     following: Object,
     contactInfo: String,
     Inspo_tags: Object,
-    board: { type: Schema.Types.ObjectId, ref: "Board" },
+    // board: { type: Schema.Types.ObjectId, ref: "Board" },
   },
   {
     timestamps: true,

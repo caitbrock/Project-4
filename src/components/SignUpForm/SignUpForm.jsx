@@ -18,6 +18,7 @@ export default class SignUpForm extends React.Component {
     confirm: '',
     error: '',
     interests: [],
+    boards: [{}]
   };
 
   handleChange = (evt) => {
@@ -39,7 +40,7 @@ export default class SignUpForm extends React.Component {
       const fetchResponse = await fetch('/api/users/signup', {
         method: 'POST',
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({name: this.state.name, email: this.state.email, password: this.state.password, interests: this.state.interests
+        body: JSON.stringify({name: this.state.name, email: this.state.email, password: this.state.password, interests: this.state.interests, boards: this.state.boards
         }),
       });
 
