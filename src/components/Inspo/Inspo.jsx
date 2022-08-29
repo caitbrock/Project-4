@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import header from "../../Header-IM.jpg";
 import { styled } from "@mui/material/styles";
-import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
+import CreateBoard from "../CreateBoard/CreateBoard";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import AddIcon from '@mui/icons-material/Add';
 import PopupForm from "../PopupForm/PopupForm";
-import { useState } from 'react';
+import Boards from "../Boards/Boards";
 import "./Inspo.css";
 
 const ListItem = styled("li")(({ theme }) => ({
@@ -26,10 +26,22 @@ const customTheme = createTheme({
   },
 });
 
-
 function Inspo(props) {
-
+  const [boards, setBoards] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false)
+
+  useEffect(() => {
+    async function fetchData() {
+      let data = await fetch("/api/boards")
+        .then((response) => response.json())
+        .then((boards) => {
+          setBoards(boards);
+        });
+    }
+    fetchData();
+  }, []);
+
+  console.log(boards);
 
   return (
     <>
@@ -65,62 +77,21 @@ function Inspo(props) {
 
 <button className="create-board" onClick={() => setButtonPopup(true)}> Create Board <span><AddIcon/></span></button>
         <PopupForm trigger={buttonPopup} setTrigger= {setButtonPopup}>
-        <form className="createboard"
-              // action="/"
-              // enctype="multipart/form-data"
-              // method="post"
-              // onSubmit={this.handlePost}
-            >
-      
-              <label className="addboardlabel">
-                Title:
-                <input
-                  type="text"
-                  name="title"
-                  // value={this.state.title}
-                  // onChange={this.handleChange}
-                  // required
-                />
-              </label>
-              <label className="addboardlabel">
-                Description:
-                <input
-                  type="text"
-                  name="description"
-                  // value={this.state.description}
-                  // onChange={this.handleChange}
-                  // required
-                />
-              </label>
-
-              <div>
-              <button className="submit" type="submit">
-                Create Board
-              </button>
-              </div>
-            </form>
+        <CreateBoard />
         </PopupForm>
            </Paper>
     </ThemeProvider>
 
-{/* 
-    {props.boards.map((b) => (
-      <div
-      className= "BoardImages"
-      style={{ display: "flex", justifyContent: "center", width: '100%', flexWrap: 'wrap'}}>
-        <div className="imagecard" style={{ margin: "20px", maxWidth: 425, minWidth: 425}}>
-          <div className="imagecontent">
-            <div className="upload-image" component="img"></div>
-            <div className="image-title">
-              {" "}
-        <h5>{b.title}</h5></div>
-            <div className="image-desription">
-              {" "}
-        <h6>{b.description}</h6></div>
-          </div>
+    {boards ? (
+        <div
+          className="Boards"
+          style={{ display: "flex", justifyContent: "center", width: '100%', flexWrap: 'wrap'}}
+        >
+            <Boards boards={boards} />
         </div>
-        </div>
-        ))} */}
+      ) : (
+        false
+      )}
     </>
   );
 }

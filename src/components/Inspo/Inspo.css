@@ -18,3 +18,10 @@
     text-align: right;
     margin-right: 125px;
 }
+
+.Boards{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+
+}

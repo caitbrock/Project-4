@@ -3,17 +3,16 @@ const Post = require("../models/posts");
 const Board = require("../models/boards");
 
 async function boardIndex(req, res) {
-  let posts = await Post.find({}).sort({ createdAt: "desc" });
-  res.status(200).json(posts);
+  let boards = await Post.find({}).sort({ createdAt: "desc" });
+  res.status(200).json(boards);
 }
 
-async function addtoBoard(req, res) {
+async function boardCreate(req, res) {
   try {
     // 1. put the order in the database (the data will be incoming via `req.body`)
     const board = await Board.create({
       title: req.body.title,
       description: req.body.description,
-      destination: req.body.destination,
     });
     console.log(board);
     // 2. send a response to frontend - typically we send back the newly created order, or all the list of orders, or just an 'ok'
@@ -24,6 +23,6 @@ async function addtoBoard(req, res) {
 }
 
 module.exports = {
-  addtoBoard,
+  boardCreate,
   boardIndex,
 };

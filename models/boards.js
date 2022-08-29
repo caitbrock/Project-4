@@ -4,18 +4,13 @@ const Schema = mongoose.Schema;
 
 const boardSchema = new Schema(
   {
-    board_name: String,
-    Pictures: Object,
-    Videos: Object,
-    Routes: Object,
-    Restaurants: Object,
-    Hotels: Object,
-    Destinations: Object,
-    Transportation: Object,
+    id: Number,
+    title: String,
+    description: String,
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = mongoose.model("User", boardSchema);
+module.exports = mongoose.model("Board", boardSchema);
