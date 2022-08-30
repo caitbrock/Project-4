@@ -5,6 +5,7 @@ import DeletableChips from "../DeletableChips/DeletableChips";
 
 function Feed(props) {
   const [posts, setPosts] = useState(false);
+  const [boards, setBoards] = useState(false);
 
   useEffect(() => {
     async function fetchData() {

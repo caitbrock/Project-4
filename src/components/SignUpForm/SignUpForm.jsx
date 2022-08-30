@@ -18,7 +18,7 @@ export default class SignUpForm extends React.Component {
     confirm: '',
     error: '',
     interests: [],
-    boards: [{}]
+
   };
 
   handleChange = (evt) => {

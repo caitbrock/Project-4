@@ -7,6 +7,7 @@ const boardSchema = new Schema(
     id: Number,
     title: String,
     description: String,
+    // posts: Array,
   },
   {
     timestamps: true,

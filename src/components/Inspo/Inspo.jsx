@@ -41,7 +41,7 @@ function Inspo(props) {
     fetchData();
   }, []);
 
-  console.log(boards);
+  console.log("hello", boards);
 
   return (
     <>
