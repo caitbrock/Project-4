@@ -1,4 +1,3 @@
-const User = require("../models/user");
 const Post = require("../models/posts");
 
 async function index(req, res) {
@@ -13,6 +12,7 @@ async function create(req, res) {
       title: req.body.title,
       description: req.body.description,
       destination: req.body.destination,
+      image: req.body.images,
       tags: req.body.tags,
     });
     console.log(post);
@@ -22,11 +22,6 @@ async function create(req, res) {
     res.status(400).json(err);
   }
 }
-
-
-
-
-
 
 module.exports = {
   create,

@@ -8,7 +8,7 @@ function Feed(props) {
 
   useEffect(() => {
     async function fetchData() {
-      let data = await fetch("/api/posts")
+      let data = await fetch("/api/posts/postIndex")
         .then((response) => response.json())
         .then((posts) => {
           setPosts(posts);
@@ -26,21 +26,24 @@ function Feed(props) {
         style={{ backgroundImage: `url(${header})` }}
       ></div>
       <DeletableChips user={props.user} updateInterest={props.updateInterest} />
-      
+
       {posts ? (
         <div
           className="FeedImages"
-          style={{ display: "flex", justifyContent: "center", width: '100%', flexWrap: 'wrap'}}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            width: "100%",
+            flexWrap: "wrap",
+          }}
         >
-            <Images posts={posts} />
+          <Images posts={posts} />
         </div>
       ) : (
         false
       )}
-      
     </>
   );
 }
 
 export default Feed;
-
