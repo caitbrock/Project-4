@@ -35,66 +35,91 @@ const customTheme = createTheme({
 function Inspo() {
   return (
     <>
-     <div
+      <div
         className="bannerheader"
         style={{ backgroundImage: `url(${header})` }}
       ></div>
-    <ThemeProvider theme={customTheme}>
-      <Paper
-        sx={{
+      <ThemeProvider theme={customTheme}>
+        <Paper
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "wrap",
+            listStyle: "none",
+            p: 3,
+            m: 2,
+          }}
+          component="ul"
+        >
+          <form className="interestform" autoComplete="off">
+            <input type="text" placeholder="Search Boards" />
+            <button className="submitsearch">
+              <SearchIcon />
+            </button>
+          </form>
+          <ListItem></ListItem>
+        </Paper>
+      </ThemeProvider>
+      <div
+        className="BoardImages"
+        style={{
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
+          width: "100%",
           flexWrap: "wrap",
-          listStyle: "none",
-          p: 3,
-          m: 2,
         }}
-        component="ul"
       >
-        <form
-          className="interestform"
-          autoComplete="off"
+        <div
+          className="imagecard"
+          style={{ margin: "20px", maxWidth: 350, minWidth: 350 }}
         >
-          <input
-            type="text"
-            placeholder="Search Boards"
-          />
-          <button className="submitsearch">
-            <SearchIcon />
-          </button>
-        </form>
-            <ListItem >
-            </ListItem>
-           </Paper>
-    </ThemeProvider>
-      <div 
-      className= "BoardImages"
-      style={{ display: "flex", justifyContent: "center", width: '100%', flexWrap: 'wrap'}}>
-        <div className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350}}>
           <div className="imagecontent">
             <div className="upload-image" component="img"></div>
-            <div className="image-title"> <h5>Paris - 2023</h5></div>
-            <div className="image-desription"> <h6>Treat yourself!</h6></div>
+            <div className="image-title">
+              {" "}
+              <h5>Paris - 2023</h5>
+            </div>
+            <div className="image-desription">
+              {" "}
+              <h6>Treat yourself!</h6>
+            </div>
           </div>
         </div>
 
-        <div className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350}}>
+        <div
+          className="imagecard"
+          style={{ margin: "20px", maxWidth: 350, minWidth: 350 }}
+        >
           <div className="imagecontent">
             <div className="upload-image" component="img"></div>
-            <div className="image-title"> <h5>Must Sees!!!</h5></div>
-            <div className="image-desription"> <h6>The best of the best</h6></div>
+            <div className="image-title">
+              {" "}
+              <h5>Must Sees!!!</h5>
+            </div>
+            <div className="image-desription">
+              {" "}
+              <h6>The best of the best</h6>
+            </div>
           </div>
         </div>
 
-        <div className="imagecard" style={{ margin: "20px", maxWidth: 350, minWidth: 350}}>
+        <div
+          className="imagecard"
+          style={{ margin: "20px", maxWidth: 350, minWidth: 350 }}
+        >
           <div className="imagecontent">
             <div className="upload-image" component="img"></div>
-            <div className="image-title"> <h5>Weekend Home</h5></div>
-            <div className="image-desription"> <h6>To Dos Aug 19 - 24</h6></div>
+            <div className="image-title">
+              {" "}
+              <h5>Weekend Home</h5>
+            </div>
+            <div className="image-desription">
+              {" "}
+              <h6>To Dos Aug 19 - 24</h6>
+            </div>
           </div>
         </div>
-
       </div>
     </>
   );

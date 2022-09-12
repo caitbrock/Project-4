@@ -17,19 +17,19 @@ function Images(props) {
         >
           <div className="imagecontent">
             <div className="upload-image" component="img">
-              <img src={url} />
+              {/* <img src={url} /> */}
             </div>
             <div className="image-title">
-              {" "}
               <h5>{c.title}</h5>
             </div>
-            <div className="image-desription">
-              {" "}
+            <div className="image-description">
               <h6>{c.destination}</h6>
             </div>
-            <div className="image-desription">
-              {" "}
+            <div className="image-description">
               <h6>{c.description}</h6>
+            </div>
+            <div className="image">
+              <h6>{c.images}</h6>
             </div>
           </div>
 

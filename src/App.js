@@ -3,7 +3,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
-import Login from './components/Login/Login';
+import Login from "./components/Login/Login";
 
 class App extends Component {
   state = {
@@ -17,17 +17,24 @@ class App extends Component {
   };
 
   updateInterest = (evt, newInterest) => {
-     this.setState(state => ({
-     user: {...this.state.user, interests: [...this.state.user.interests, newInterest]}
-      }));
-      console.log(newInterest)
-    }
+    this.setState((state) => ({
+      user: {
+        ...this.state.user,
+        interests: [...this.state.user.interests, newInterest],
+      },
+    }));
+    console.log(newInterest);
+  };
 
   updateCurrentTabTo = (tab) => {
     this.setState({ currentTab: tab });
   };
 
   async componentDidMount() {
+    localStorage.setItem(
+      "token",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+    );
     let token = localStorage.getItem("token");
     try {
       let userLogin = await fetch("/api/users/verify", {
@@ -72,9 +79,15 @@ class App extends Component {
                 />
               }
             />
-            <Route path="/login" element={<Login                   
+            <Route
+              path="/login"
+              element={
+                <Login
                   user={this.state.user}
-                  setUserInState={this.setUserInState}/>} />
+                  setUserInState={this.setUserInState}
+                />
+              }
+            />
           </Routes>
         )}
       </div>
