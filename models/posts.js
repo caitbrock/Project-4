@@ -1,4 +1,3 @@
-const { imageListClasses } = require("@mui/material");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -8,6 +7,7 @@ const postSchema = new Schema(
     title: String,
     description: String,
     destination: String,
+    images: { type: String, required: true },
     tags: { type: Array, required: true },
   },
   {

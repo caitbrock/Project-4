@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
+const s3 = require("./s3.js");
 
 require("dotenv").config();
 require("./config/database.js");
@@ -21,6 +22,12 @@ app.use(require("./config/auth"));
 
 app.use("/api/posts", require("./routes/api/posts"));
 
+//S3 endpoint
+app.get("/s3Url", async (req, res) => {
+  const url = await s3.generateUploadURL();
+  res.send({ url });
+});
+
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
@@ -38,8 +45,8 @@ io.on("connection", (socket) => {
   });
 });
 
-const imageUpload = require("./routes/api/aws");
-app.use("/", imageUpload);
+// const imageUpload = require("./routes/api/aws");
+// app.use("/", imageUpload);
 
-const fileupload = require("express-fileupload");
-app.use(fileupload());
+// const fileupload = require("express-fileupload");
+// app.use(fileupload());
