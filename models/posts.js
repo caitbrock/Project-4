@@ -7,7 +7,7 @@ const postSchema = new Schema(
     title: String,
     description: String,
     destination: String,
-    images: { type: String, required: true },
+    images: String,
     tags: { type: Array, required: true },
   },
   {

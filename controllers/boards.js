@@ -14,6 +14,7 @@ async function addtoBoard(req, res) {
       title: req.body.title,
       description: req.body.description,
       destination: req.body.destination,
+      images: req.body.images,
     });
     console.log(board);
     // 2. send a response to frontend - typically we send back the newly created order, or all the list of orders, or just an 'ok'

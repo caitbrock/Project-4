@@ -29,7 +29,7 @@ function Images(props) {
               <h6>{c.description}</h6>
             </div>
             <div className="image">
-              <h6>{c.images}</h6>
+              <img src={c.images}></img>
             </div>
           </div>
 
