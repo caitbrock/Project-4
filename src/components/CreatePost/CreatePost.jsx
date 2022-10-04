@@ -19,7 +19,10 @@ class CreatePost extends React.Component {
       [evt.target.name]: evt.target.value,
       error: "",
     });
-    this.setState({ photo: evt.target.files });
+  };
+
+  handleFile = (evt) => {
+    this.setState({ files: evt.target.files[0] });
   };
 
   // const handleDeleteTag = (tagToDelete) => () => {
@@ -32,16 +35,18 @@ class CreatePost extends React.Component {
     e.preventDefault();
     const file = this.state.files;
     const { url } = await fetch("/s3Url").then((res) => res.json());
-    this.setState({ photoURL: url });
-    //console.log(url); - ok
-    //console.log(file); - ok
+    //this.setState({ photoURL: url });
+    console.log(url);
+    const adjURL = url.split("?");
+    const newURL = adjURL[0];
+    console.log(file);
     try {
       fetch(url, {
         method: "PUT",
         headers: {
           "Content-Type": "multipart/form-data",
         },
-        body: this.state.files,
+        body: file,
       })
         .then((res) => res.json())
         .catch((err) => console.error(err));
@@ -56,13 +61,13 @@ class CreatePost extends React.Component {
           title: this.state.title,
           description: this.state.description,
           destination: this.state.destination,
-          images: url,
+          images: newURL,
         }), // <-- send this object to server
       });
       let serverResponse = await fetchResponse.json(); // <-- decode fetch response
       console.log("Success:", serverResponse); // <-- log server response
       //window.location.href = "/";
-      this.setState({ title: "", description: "", destination: "" }); // if order sent without errors, set state to empty
+      this.setState({ title: "", description: "", destination: "", files: [] }); // if order sent without errors, set state to empty
     } catch (err) {
       console.error("Error:", err); // <-- log if error
     }
@@ -88,9 +93,9 @@ class CreatePost extends React.Component {
               <input
                 type="file"
                 class="form-control-file"
-                name="files"
-                value={this.state.files}
-                onChange={this.handleChange}
+                //name="files"
+                //value={this.state.files}
+                onChange={this.handleFile}
               />
             </label>
             <label className="addpostlabel">
