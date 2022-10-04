@@ -1,11 +1,11 @@
 // const express = require("express");
 // const router = express.Router();
 // const upload = require("../../controllers/aws");
-// const singleUpload = upload.single("file");
+// const singleUpload = upload.single("image");
 
-// router.post("/", function (req, res) {
+// router.post("/upload", function (req, res) {
 //   singleUpload(req, res, function (err) {
-//     console.log("Uploaded!", req.files);
+//     console.log("Uploaded!", req.images);
 //   });
 // });
 
