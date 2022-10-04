@@ -31,10 +31,10 @@ class App extends Component {
   };
 
   async componentDidMount() {
-    localStorage.setItem(
-      "token",
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-    );
+    // localStorage.setItem(
+    //   "token",
+    //   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.baeSkHcafc6CE4Raf_CQgMIwwyWV7NEOzIzMp96_r4I"
+    // );
     let token = localStorage.getItem("token");
     try {
       let userLogin = await fetch("/api/users/verify", {

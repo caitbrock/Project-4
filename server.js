@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
-const s3 = require("./s3.js");
+const { generateUploadURL } = require("./s3Service");
 
 require("dotenv").config();
 require("./config/database.js");
@@ -22,9 +22,30 @@ app.use(require("./config/auth"));
 
 app.use("/api/posts", require("./routes/api/posts"));
 
-//S3 endpoint
+// app.use((error, req, res, next) => {
+//   if (error instanceof multer.MulterError) {
+//     if (error.code === "LIMIT_FILE_SIZE") {
+//       return res.status(400).json({
+//         message: "file is too large",
+//       });
+//     }
+
+//     if (error.code === "LIMIT_FILE_COUNT") {
+//       return res.status(400).json({
+//         message: "File limit reached",
+//       });
+//     }
+
+//     if (error.code === "LIMIT_UNEXPECTED_FILE") {
+//       return res.status(400).json({
+//         message: "File must be an image",
+//       });
+//     }
+//   }
+// });
+
 app.get("/s3Url", async (req, res) => {
-  const url = await s3.generateUploadURL();
+  const url = await generateUploadURL();
   res.send({ url });
 });
 
@@ -44,9 +65,3 @@ io.on("connection", (socket) => {
     socket.broadcast.emit("newPost", data);
   });
 });
-
-// const imageUpload = require("./routes/api/aws");
-// app.use("/", imageUpload);
-
-// const fileupload = require("express-fileupload");
-// app.use(fileupload());
