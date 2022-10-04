@@ -12,7 +12,7 @@ async function create(req, res) {
       title: req.body.title,
       description: req.body.description,
       destination: req.body.destination,
-      image: req.body.images,
+      images: req.body.images,
       tags: req.body.tags,
     });
     console.log(post);

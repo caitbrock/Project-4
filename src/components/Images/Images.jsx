@@ -11,14 +11,13 @@ function Images(props) {
   return (
     <>
       {props.posts.map((c) => (
-        <div
-          className="imagecard"
-          style={{ margin: "20px", maxWidth: 350, minWidth: 350 }}
-        >
+        <div>
+          <img
+            className="imagecard"
+            style={{ margin: "20px", maxHeight: 150, minWidth: 350 }}
+            src={c.images}
+          ></img>
           <div className="imagecontent">
-            <div className="upload-image" component="img">
-              {/* <img src={url} /> */}
-            </div>
             <div className="image-title">
               <h5>{c.title}</h5>
             </div>
@@ -28,9 +27,7 @@ function Images(props) {
             <div className="image-description">
               <h6>{c.description}</h6>
             </div>
-            <div className="image">
-              <h6>{c.images}</h6>
-            </div>
+            <div className="image">{/* <img src={c.images}></img> */}</div>
           </div>
 
           {c.tags.map((m) => (
