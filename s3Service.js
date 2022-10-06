@@ -8,8 +8,8 @@ require("dotenv").config();
 
 const region = "us-east-1";
 const bucketName = "travelspo-app";
-const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
-const secretAccessKey = process.env.AWS_SECRET_ACEESS_KEY;
+const accessKeyId = process.env.ACCESS_KEY_ID;
+const secretAccessKey = process.env.ECRET_ACEESS_KEY;
 
 const s3 = new aws.S3({
   region,
